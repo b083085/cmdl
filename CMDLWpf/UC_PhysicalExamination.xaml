@@ -1,0 +1,274 @@
+﻿<UserControl x:Class="CMDLWpf.UC_PhysicalExamination"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Height="419" Width="768" xmlns:my="clr-namespace:CMDLWpf">
+    <UserControl.Resources>
+        <my:RecordExistConverter x:Key="recordExistConverter" />
+    </UserControl.Resources>
+    <Grid Margin="5">
+        <TabControl Name="tabControl1">
+            <TabItem Header="PHYSICAL EXAMINATION">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Vertical">
+                        <Label Content="Nature Of Work"/>
+                        <TextBox Background="LightYellow" Width="250" HorizontalAlignment="Left" Name="tbNatureOfWork" Text="{Binding Path=NatureOfWork, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Label Content="Growth Development"/>
+                        <ComboBox Width="250" HorizontalAlignment="Left" Name="cbGrowthDevelopment" Text="{Binding Path=GrowthDevelopment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <ComboBoxItem Content="GOOD"/>
+                            <ComboBoxItem Content="FAIR"/>
+                            <ComboBoxItem Content="POOR"/>
+                        </ComboBox>
+                        <GroupBox>
+                            <GroupBox.HeaderTemplate>
+                                <DataTemplate>
+                                    <Label Content="VITAL SIGNS" Foreground="Black" FontWeight="Bold"/>
+                                </DataTemplate>
+                            </GroupBox.HeaderTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="0" Grid.Row="0" Content="BP:"/>
+                                <Label Grid.Column="0" Grid.Row="1" Content="HR:"/>
+                                <Label Grid.Column="0" Grid.Row="2" Content="PR:"/>
+                                <TextBox Grid.Column="1" Grid.Row="0" Background="LightYellow" Margin="2" Name="tbBP" Text="{Binding Path=Bp, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBox Grid.Column="1" Grid.Row="1" Background="LightYellow" Margin="2" Name="tbHR" Text="{Binding Path=Hr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBox Grid.Column="1" Grid.Row="2" Background="LightYellow" Margin="2" Name="tbPR" Text="{Binding Path=Pr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Label Grid.Column="2" Grid.Row="0" Content="mmHg"/>
+                                <Label Grid.Column="2" Grid.Row="1" Content="/min"/>
+                                <Label Grid.Column="2" Grid.Row="2" Content="/min:"/>
+
+                                <Label Grid.Column="3" Grid.Row="0" Content="Height:"/>
+                                <Label Grid.Column="3" Grid.Row="1" Content="Weight:"/>
+                                <TextBox Grid.Column="4" Grid.Row="0" Background="LightYellow" Margin="2" Name="tbFeet" Text="{Binding Path=Ft, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBox Grid.Column="6" Grid.Row="0" Background="LightYellow" Margin="2" Name="tbInch" Text="{Binding Path=Inch, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Label Grid.Column="7" Grid.Row="0" Content="in."/>
+                                <TextBox Grid.Column="4" Grid.Row="1" Background="LightYellow" Margin="2" Name="tbWeight" Text="{Binding Path=Weight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Label Grid.Column="5" Grid.Row="0" Content="ft."/>
+                                <Label Grid.Column="5" Grid.Row="1" Content="lbs."/>
+
+
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox>
+                            <GroupBox.HeaderTemplate>
+                                <DataTemplate>
+                                    <Label Content="EYES" FontWeight="Bold"/>
+                                </DataTemplate>
+                            </GroupBox.HeaderTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="25"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="0" Grid.Row="0" Content="Remarks:"/>
+                                <TextBox Grid.Column="1" Grid.Row="0" Background="LightYellow" HorizontalAlignment="Left" Width="250" Margin="2" Name="tbEyesRemarks" Text="{Binding Path=Eyes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Label Grid.Column="0" Grid.Row="1" Content="OD: 20/"/>
+                                <TextBox Grid.Column="1" Grid.Row="1" Background="LightYellow" HorizontalAlignment="Left" Width="50" Margin="2" Name="tbOD" Text="{Binding Path=Od, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Label Grid.Column="0" Grid.Row="2" Content="OS: 20/"/>
+                                <TextBox Grid.Column="1" Grid.Row="2" Background="LightYellow" HorizontalAlignment="Left" Width="50" Margin="2" Name="tbOS" Text="{Binding Path=Os, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Label Grid.Column="0" Grid.Row="3" Content="Ishihara Test:"/>
+                                <TextBox Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Background="LightYellow" HorizontalAlignment="Left" Width="250" Margin="2" AcceptsReturn="True" TextWrapping="WrapWithOverflow" SpellCheck.IsEnabled="True" Name="tbIshihara" Text="{Binding Path=Ishihara, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                    <GroupBox Grid.Column="1">
+                        <GroupBox.HeaderTemplate>
+                            <DataTemplate>
+                                <Label Content="BODY PARTS" FontWeight="Bold"/>
+                            </DataTemplate>
+                        </GroupBox.HeaderTemplate>
+                        <ScrollViewer Height="334" Name="scrollViewer1" Width="357">
+                            <my:UC_BodyParts Height="370" x:Name="uC_BodyParts1" Width="337" />
+                        </ScrollViewer>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="X-RAY">
+                <GroupBox HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <GroupBox.Header>
+                        <ContentControl>
+                            <CheckBox Content="Record Exist" FontWeight="Bold" Name="cbRecordExist" IsChecked="{Binding Path=CxrExist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource recordExistConverter}}"/>
+                        </ContentControl>
+                    </GroupBox.Header>
+                    <Grid Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" IsEnabled="{Binding ElementName=cbRecordExist, Path=IsChecked}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Content="Date:"/>
+                        <DatePicker Grid.Column="1" Grid.Row="0" Width="200" HorizontalAlignment="Left" Name="dpCXRDate" SelectedDate="{Binding Path=CxrDate, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Column="0" Grid.Row="1" Content="Film No.:"/>
+                        <TextBox Grid.Column="1" Grid.Row="1" Width="200" Margin="0,2,0,0" Background="LightYellow" HorizontalAlignment="Left" Name="tbFilmNo" Text="{Binding Path=FilmNo,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Column="0" Grid.Row="2" Content="Result:"/>
+                        <CheckBox Grid.Column="1" Grid.Row="2" Width="200" Content="ESSENTIALY NEGATIVE" VerticalAlignment="Center" HorizontalAlignment="Left" Name="cbEssentiallyNegative" IsChecked="{Binding Path=CxrNegative,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource recordExistConverter}}" />
+                        <Label Grid.Column="0" Grid.Row="3" Content="Radiographic Report:"/>
+                        <TextBox Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="5" Grid.Row="3" Background="LightYellow" Margin="2" AcceptsReturn="True" TextWrapping="WrapWithOverflow" SpellCheck.IsEnabled="True"  Name="tbRadiographicReport" Text="{Binding Path=CxrFindings,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                    </Grid>
+                </GroupBox>
+
+            </TabItem>
+            <TabItem Header="LABORATORY">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="400"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0" Content="CBC:"/>
+                    <Label Grid.Column="0" Grid.Row="1" Content="Urinalysis:"/>
+                    <Label Grid.Column="0" Grid.Row="2" Content="Stool Exam:"/>
+                    <Label Grid.Column="0" Grid.Row="3" Content="Blood Chemistry:"/>
+                    <Label Grid.Column="0" Grid.Row="4" Content="Pregnancy Test:"/>
+                    <Label Grid.Column="0" Grid.Row="5" Content="VDRL:"/>
+                    <Label Grid.Column="0" Grid.Row="6" Content="Hep A:"/>
+                    <Label Grid.Column="0" Grid.Row="7" Content="Hep B:"/>
+                    <Label Grid.Column="0" Grid.Row="8" Content="HIV:"/>
+                    <Label Grid.Column="0" Grid.Row="9" Content="Drug Test:"/>
+                    <Label Grid.Column="0" Grid.Row="10" Content="Blood Typing:"/>
+                    <Label Grid.Column="0" Grid.Row="11" Content="OTher Test:"/>
+
+                    <ComboBox Grid.Column="1" Grid.Row="0" Margin="2" IsEditable="True" Background="LightYellow" Name="cbCBC" Text="{Binding Path=Cbc,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox Grid.Column="1" Grid.Row="1" Margin="2" IsEditable="True" Background="LightYellow" Name="cbUrinalysis" Text="{Binding Path=Urine,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox Grid.Column="1" Grid.Row="2" Margin="2" IsEditable="True" Background="LightYellow" Name="cbStoolExam" Text="{Binding Path=Stool,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox Grid.Column="1" Grid.Row="3" Margin="2" IsEditable="True" Background="LightYellow" Name="cbBloodChemistry" Text="{Binding Path=BloodChemistry,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox Grid.Column="1" Grid.Row="4" Margin="2" IsEditable="True" Background="LightYellow" Name="cbPregnancyTest" Text="{Binding Path=PregnancyTest,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox Grid.Column="1" Grid.Row="5" Margin="2" IsEditable="True" Background="LightYellow" Name="cbVDRL" Text="{Binding Path=Vdrl,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox Grid.Column="1" Grid.Row="6" Margin="2" IsEditable="True" Background="LightYellow" Name="cbHepA" Text="{Binding Path=HepA, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox Grid.Column="1" Grid.Row="7" Margin="2" IsEditable="True" Background="LightYellow" Name="cbHepB" Text="{Binding Path=HepB, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox Grid.Column="1" Grid.Row="8" Margin="2" IsEditable="True" Background="LightYellow" Name="cbHIV"  Text="{Binding Path=Hiv, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <ComboBox Grid.Column="1" Grid.Row="9" Margin="2" IsEditable="True" Background="LightYellow" Name="cbDrugTest" Text="{Binding Path=DrugTest,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox Grid.Column="1" Grid.Row="10" Margin="2" IsEditable="True" Background="LightYellow" Name="cbBloodTyping" Text="{Binding Path=BloodType, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <ComboBox Grid.Column="1" Grid.Row="11" Margin="2" IsEditable="True" Background="LightYellow" Name="cbOtherTest" Text="{Binding Path=OtherTest,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="REMARKS AND RECOMMENDATION">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Grid.Column="0" Margin="5">
+                        <GroupBox.HeaderTemplate>
+                            <DataTemplate>
+                                <Label Content="Remarks" FontWeight="Bold"/>
+                            </DataTemplate>
+                        </GroupBox.HeaderTemplate>
+                        <TextBox Margin="5" Background="LightYellow" AcceptsReturn="True" TextWrapping="WrapWithOverflow" SpellCheck.IsEnabled="True" Name="tbRemarks" Text="{Binding Path=Remarks,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    </GroupBox>
+                    <GroupBox Grid.Column="1" Margin="5">
+                        <GroupBox.HeaderTemplate>
+                            <DataTemplate>
+                                <Label Content="Recommendation" FontWeight="Bold"/>
+                            </DataTemplate>
+                        </GroupBox.HeaderTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <ComboBox Margin="0,0,0,5" Width="300" HorizontalAlignment="Left" Name="cbRecommendation" Text="{Binding Path=Recommendation,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <ComboBoxItem Content="NONE" />
+                                <ComboBoxItem Content="CLASS A" />
+                                <ComboBoxItem Content="CLASS B" />
+                                <ComboBoxItem Content="CLASS C" />
+                                <ComboBoxItem Content="UNFIT" />
+                                <ComboBoxItem Content="FOR EVALUATION" />
+                            </ComboBox>
+                            <TextBox Background="LightYellow" Height="193" AcceptsReturn="True" TextWrapping="WrapWithOverflow" SpellCheck.IsEnabled="True" Name="tbUnfit" Text="{Binding Path=RecommendationNote,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                            <Label Content="Referred By"/>
+                            <TextBox Background="LightYellow" Width="300" HorizontalAlignment="Left" Name="tbReferredBy" Text="{Binding Path=RefBy,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                            <Label Content="Physician"/>
+                            <ComboBox Width="300" HorizontalAlignment="Left" Name="cbPhysician" Text="{Binding Path=Physician,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="PEME">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Work Type:" Grid.Column="0" Grid.Row="0"/>
+                    <Label Content="Country of Destination:" Grid.Column="0" Grid.Row="1"/>
+                    <Label Content="Date of Deployment:" Grid.Column="0" Grid.Row="2"/>
+                    <Label Content="Date of Repatriation:" Grid.Column="0" Grid.Row="3"/>
+                    <Label Content="Causes of Repatriation:" Grid.Column="0" Grid.Row="4"/>
+                    <Label Content="Final Diagnosis:" Grid.Column="0" Grid.Row="6"/>
+                    <Label Content="Vessel Type:" Grid.Column="0" Grid.Row="8"/>
+                    <Label Content="Sea Trade:" Grid.Column="0" Grid.Row="9"/>
+
+                    <ComboBox Grid.Column="1" Grid.Row="0" Width="300" Margin="2" Name="cbWorkType" Text="{Binding Path=WorkType, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox Grid.Column="1" Grid.Row="1" Width="300" Margin="2" Name="cbCountryOfDestination" Text="{Binding Path=CountryOfDestination, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <DatePicker Grid.Column="1" Grid.Row="2" Margin="2" Name="dpDateOfDeployment" Width="200" HorizontalAlignment="Left" SelectedDate="{Binding Path=DateOfDeployment,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DatePicker Grid.Column="1" Grid.Row="3" Margin="2" Name="dpDateOfRepatriation" Width="200" HorizontalAlignment="Left" SelectedDate="{Binding Path=DateOfRepatriation,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBox Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" Height="60" Background="LightYellow" Margin="2" Name="tbCausesOfRepatriation" AcceptsReturn="True" TextWrapping="WrapWithOverflow" SpellCheck.IsEnabled="True" Text="{Binding Path=CausesOfRepatriation,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBox Grid.Column="1" Grid.Row="6" Background="LightYellow" Grid.RowSpan="2" Height="60" Margin="2" Name="tbFinalDiagnosis" AcceptsReturn="True" TextWrapping="WrapWithOverflow" SpellCheck.IsEnabled="True" Text="{Binding Path=FinalDiagnosis,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox Grid.Column="1" Grid.Row="8" Width="300" Margin="2" Name="cbVesselType" Text="{Binding Path=VesselType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox Grid.Column="1" Grid.Row="9" Width="300" Margin="2" Name="cbSeaTrade" Text="{Binding Path=SeaTrade,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

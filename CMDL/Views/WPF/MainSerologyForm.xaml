@@ -1,0 +1,51 @@
+﻿<Window x:Class="CMDL.WPF.MainSerologyForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MAIN SEROLOGY FORM" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <Label Content="Search:" VerticalAlignment="Center"/>
+            <ComboBox Width="150" Name="cbSearchItem" VerticalAlignment="Center"/>
+            <ContentControl Name="contentControl1" Width="200" Margin="5,0,0,0"/>
+        </StackPanel>   
+        <DataGrid Name="dgList" ItemsSource="{Binding}" Grid.Row="1" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" VerticalGridLinesBrush="LightGray" HorizontalGridLinesBrush="LightGray">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Width="30"/>
+                <DataGridTextColumn Header="CONTROL NO." Foreground="Red" Width="150" Binding="{Binding Path=controlno}"/>
+                <DataGridTextColumn Header="DATE REGISTERED" Width="150" Binding="{Binding Path=date_reg,StringFormat=\{0:MM-dd-yyyy\}}"/>
+                <DataGridTemplateColumn Header="PHOTO" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Path=photo}" Width="20" Height="20"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="PATIENT'S NAME" Width="*">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0},{1} {2}">
+                            <Binding Path="lastname"/>
+                            <Binding Path="firstname"/>
+                            <Binding Path="mi"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="AGE" Width="SizeToHeader" Binding="{Binding Path=age}"/>
+                <DataGridTextColumn Header="GENDER" Width="SizeToHeader" Binding="{Binding Path=sex}"/>
+                <DataGridTemplateColumn Header="EDIT" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btEdit" Content="{Binding Path=Status,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Background="Red" Foreground="White" Click="btEdit_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border Name="border1" Grid.RowSpan="2" Background="#39000000" Visibility="Collapsed">
+            <Label Name="lbMessage" Content="Please Wait..." Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"/>
+        </Border>
+    </Grid>
+</Window>

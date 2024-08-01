@@ -1,0 +1,89 @@
+﻿<Window x:Class="CMDL.LabSearchClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LABORATORY CLIENT" Height="600" Width="800" Icon="/CMDL;component/Images/Logo.png" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Viewbox Margin="12" Name="viewbox1" Stretch="Fill">
+            <StackPanel Height="537" Name="stackPanel1" Width="754">
+                <GroupBox Header="Search" Height="56" Name="groupBox1" Width="754" HorizontalAlignment="Left" BorderBrush="LimeGreen" Foreground="Black" Margin="0,0,0,10">
+                    <StackPanel Height="23" Name="stackPanel2" Orientation="Horizontal" Width="730">
+                        <ComboBox Height="23" Margin="0,0,5,0" Name="CbFilter" Width="150">
+                            <ComboBoxItem Content="TODAY" />
+                            <ComboBoxItem Content="CONTROL NO." />
+                            <ComboBoxItem Content="DATE" />
+                            <ComboBoxItem Content="LAST NAME" />
+                            <ComboBoxItem Content="FIRST NAME" />
+                        </ComboBox>
+                        <TextBox Background="LightYellow" Height="23" Margin="0,0,5,0" Name="TbKeyWord" Width="300" CharacterCasing="Upper" FontFamily="Arial" FontWeight="Bold" Foreground="Blue" />
+                        <Button Content="SEARCH" FontFamily="Arial" FontWeight="Bold" Height="23" Name="BtSearch" Width="100" Margin="0,0,10,0">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="LimeGreen" Offset="0.801" />
+                                    <GradientStop Color="#FF61E561" Offset="0" />
+                                    <GradientStop Color="LimeGreen" Offset="0.5" />
+                                    <GradientStop Color="#FF67E665" Offset="0.45" />
+                                    <GradientStop Color="#FF64E663" Offset="1" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <TextBlock Height="23" Name="TbResults" Text="RESULTS:" Padding="0,3,0,0" />
+                    </StackPanel>
+                </GroupBox>
+                <DataGrid AutoGenerateColumns="False" Height="436" Name="dataGrid1" Width="754" ItemsSource="{Binding}" FontFamily="Arial" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray" Margin="0,0,0,10">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="No." Width="SizeToHeader" Binding="{Binding Path=PriorityNo,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                        <DataGridCheckBoxColumn Header="Select" Binding="{Binding Select}" />
+                        <DataGridTextColumn Header="Time In" Width="*" Binding="{Binding TimeIn}" />
+                        <DataGridTextColumn Header="ControlNo" Width="*" Binding="{Binding ControlNo}" Foreground="Red" />
+                        <DataGridTemplateColumn Header="Photo" Width="*">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate />
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding Photo}" Height="40" Width="50"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Last Name" Width="*" Binding="{Binding LastName}"/>
+                        <DataGridTextColumn Header="First Name" Width="*" Binding="{Binding FirstName}" />
+                        <DataGridTextColumn Header="MI" Width="SizeToHeader" Binding="{Binding MI}" />
+                        <DataGridTextColumn Header="Age" Width="SizeToHeader" Binding="{Binding Age}" />
+                        <DataGridTextColumn Header="Sex" Width="SizeToheader" Binding="{Binding Sex}" />
+                        <DataGridTemplateColumn Header="Status" Width="*">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate />
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="{Binding Status}" Name="BtStatus" Click="BtStatus_Click">
+                                        <Button.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="LimeGreen" Offset="0.801" />
+                                                <GradientStop Color="#FF61E561" Offset="0" />
+                                                <GradientStop Color="LimeGreen" Offset="0.5" />
+                                                <GradientStop Color="#FF67E665" Offset="0.45" />
+                                                <GradientStop Color="#FF64E663" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Content="CLEAR CHECK" FontFamily="Arial" FontWeight="Bold" Height="23" Name="BtClearCheck" Width="100" HorizontalAlignment="Right">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="LimeGreen" Offset="0.801" />
+                            <GradientStop Color="#FF61E561" Offset="0" />
+                            <GradientStop Color="LimeGreen" Offset="0.5" />
+                            <GradientStop Color="#FF67E665" Offset="0.45" />
+                            <GradientStop Color="#FF64E663" Offset="1" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</Window>

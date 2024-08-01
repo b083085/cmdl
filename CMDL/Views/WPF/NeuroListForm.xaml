@@ -1,0 +1,133 @@
+﻿<Window x:Class="CMDL.NeuroListForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:conv="clr-namespace:CMDL.Converters"
+        Title="NEURO LIST" 
+        Height="600" 
+        Width="800" 
+        Icon="/CMDL;component/Images/Logo.png" 
+        WindowStartupLocation="CenterScreen" 
+        FontFamily="Arial"
+        ShowInTaskbar="True">
+    <Window.Resources>
+        <conv:FilterVisibilityConverter x:Key="filterVisibilityConverter"/>
+        <conv:FilterDateRangeVisibilityConverter x:Key="filterDateRangeVisibilityConverter"/>
+        <conv:FilterKeywordVisibilityConverter x:Key="filterKeywordVisibilityConverter"/>
+        <conv:PrintVisibilityConverter x:Key="printVisibilityConverter"/>
+    </Window.Resources>
+    <Grid Margin="10" x:Name="neuroGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Filter" 
+                  Name="gbFilter"
+                      Margin="0,0,0,10">
+            <DockPanel Margin="5">
+                <ComboBox Margin="0,0,5,0" 
+                              Name="cbFilter"
+                              Width="150"/>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding ElementName=cbFilter,Path=SelectedItem,Converter={StaticResource filterVisibilityConverter}}">
+                    <TextBox Background="LightYellow" 
+                             Margin="0,0,5,0"
+                             Name="tbKeywords"
+                             Width="200" 
+                             Visibility="{Binding ElementName=cbFilter,Path=SelectedItem,Converter={StaticResource filterKeywordVisibilityConverter}}"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,5,0" Visibility="{Binding ElementName=cbFilter,Path=SelectedItem,Converter={StaticResource filterDateRangeVisibilityConverter}}">
+                        <Label Content="From:"/>
+                        <DatePicker Name="dpDateFrom" Width="120"/>
+                        <Label Content="To:"/>
+                        <DatePicker Name="dpDateTo" Width="120"/>
+                    </StackPanel>
+                </StackPanel>
+                <Button Content="Search" 
+                            Name="btnSearch" 
+                            Width="60" 
+                            Margin="0,0,10,0" 
+                            Foreground="#fff">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF47A3FA" Offset="0" />
+                            <GradientStop Color="DodgerBlue" Offset="0.73" />
+                            <GradientStop Color="DodgerBlue" Offset="0.5" />
+                            <GradientStop Color="#FF5AACF9" Offset="0.418" />
+                            <GradientStop Color="#FF4EA6FA" Offset="1" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <TextBlock Name="TbResults" 
+                               Text="{Binding ElementName=dgItems,Path=Items.Count,StringFormat={} TOTAL: {0}}" 
+                               DockPanel.Dock="Right"
+                               HorizontalAlignment="Right"
+                               Padding="0,3,0,0" />
+            </DockPanel>
+        </GroupBox>
+        <DataGrid Grid.Row="1"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      Name="dgItems"
+                      IsReadOnly="True"
+                      ItemsSource="{Binding Path=Items}"
+                      HorizontalGridLinesBrush="LightGray" 
+                      VerticalGridLinesBrush="LightGray" 
+                      Margin="0,0,0,10">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type TextBlock}" x:Key="dataGridTextElementStyle">
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="Padding" Value="5,0,0,0"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Control No" 
+                                    Width="90" 
+                                    Binding="{Binding Client.ControlNo}" 
+                                    Foreground="Red" 
+                                    ElementStyle="{StaticResource dataGridTextElementStyle}"/>
+                <DataGridTemplateColumn Header="Photo" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Client.Photo}" Width="30" Height="30"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Last Name" 
+                                    Width="*" 
+                                    Binding="{Binding Client.LastName}" 
+                                    ElementStyle="{StaticResource dataGridTextElementStyle}"/>
+                <DataGridTextColumn Header="First Name" 
+                                    Width="*" 
+                                    Binding="{Binding Client.FirstName}" 
+                                    ElementStyle="{StaticResource dataGridTextElementStyle}"/>
+                <DataGridTextColumn Header="MI" 
+                                    Width="SizeToHeader" 
+                                    Binding="{Binding Client.MiddleInitial}" 
+                                    ElementStyle="{StaticResource dataGridTextElementStyle}"/>
+                <DataGridTextColumn Header="Age" 
+                                    Width="SizeToHeader" 
+                                    Binding="{Binding Client.Age}" 
+                                    ElementStyle="{StaticResource dataGridTextElementStyle}"/>
+                <DataGridTextColumn Header="Gender"
+                                    Width="SizeToheader"
+                                    Binding="{Binding Client.Gender}"
+                                    ElementStyle="{StaticResource dataGridTextElementStyle}"/>
+                <DataGridTextColumn Header="Time In" 
+                                    Width="*" 
+                                    Binding="{Binding Client.TimeIn}" 
+                                    ElementStyle="{StaticResource dataGridTextElementStyle}"/>
+                <DataGridTemplateColumn Header="Status" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding Status}" 
+                                    Name="btnStatus" 
+                                    Foreground="#fff"
+                                    Click="BtnStatus_Click"
+                                    Background="{StaticResource btnBackgroundStyle}">
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

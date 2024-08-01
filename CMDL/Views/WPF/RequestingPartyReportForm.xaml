@@ -1,0 +1,58 @@
+﻿<Window x:Class="CMDL.WPF.RequestingPartyReportForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="REQUESTING PARTY REPORT FORM" Height="600" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Content="Search:" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox Name="cbMonth" Grid.Column="1" VerticalAlignment="Center" Margin="5" Width="150"/>
+            <ComboBox Name="cbYear" Grid.Column="2" VerticalAlignment="Center" Margin="5" Width="100"/>
+            <TextBox Name="tbSearch" Grid.Column="3" Background="LightYellow" VerticalAlignment="Center" Width="300" Margin="5" CharacterCasing="Upper"/>
+            <Button Name="btSearch" Grid.Column="4" Content="Search" Width="100" VerticalAlignment="Center"/>
+        </Grid>
+        <GroupBox Grid.Row="1" Header="List" Margin="5">
+            <DataGrid Name="dgList" Margin="5" ItemsSource="{Binding}" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" VerticalGridLinesBrush="LightGray" HorizontalGridLinesBrush="LightGray" AlternatingRowBackground="AliceBlue">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Date Registered" Width="100" Binding="{Binding Path=date_reg,StringFormat=\{0:MM-dd-yyyy\}}"/>
+                    <DataGridTextColumn Header="Patient's Name" Width="*">
+                        <DataGridTextColumn.Binding>
+                            <MultiBinding StringFormat="{}{0}, {1} {2}">
+                                <Binding Path="lastname"/>
+                                <Binding Path="firstname"/>
+                                <Binding Path="mi"/>
+                            </MultiBinding>
+                        </DataGridTextColumn.Binding>
+                    </DataGridTextColumn>
+                    <DataGridTemplateColumn Width="*" Header="Requesting Party">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=reqparty}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="*" Header="Examinations">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=exam}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+    </Grid>
+</Window>

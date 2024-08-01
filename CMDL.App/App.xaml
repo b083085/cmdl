@@ -1,0 +1,74 @@
+﻿<Application x:Class="CMDL.App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CMDL.App"
+             xmlns:regCommon="clr-namespace:CMDL.App.Registration.Common"
+             xmlns:display="clr-namespace:CMDL.App.Registration.Display"
+             xmlns:edit="clr-namespace:CMDL.App.Registration.Edit"
+             xmlns:new="clr-namespace:CMDL.App.Registration.New"
+             xmlns:print="clr-namespace:CMDL.App.Registration.Print"
+             xmlns:sales="clr-namespace:CMDL.App.Registration.Sales"
+             xmlns:verify="clr-namespace:CMDL.App.Registration.Verification"
+             xmlns:lab="clr-namespace:CMDL.App.Laboratory"
+             xmlns:neuro="clr-namespace:CMDL.App.Neuro"
+             xmlns:xray="clr-namespace:CMDL.App.XRay"
+             xmlns:reports="clr-namespace:CMDL.App.Reports"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <local:LoginView x:Key="loginView" />
+        <local:MainView x:Key="mainView" />
+        <display:DisplayRegistrationView x:Key="displayRegistrationView"/>
+        <edit:EditRegistrationView x:Key="editRegistrationView"/>
+        <new:NewRegistrationView x:Key="newRegistrationView"/>
+        <print:PrintRegistrationView x:Key="printRegistrationView"/>
+        <sales:SalesView x:Key="salesView"/>
+        <verify:VerificationView x:Key="verificationView"/>
+        <lab:LaboratoryView x:Key="labView"/>
+        <neuro:NeuroView x:Key="neuroView"/>
+        <xray:XRayView x:Key="xrayView"/>
+        <reports:ReportsView x:Key="reportsView"/>
+
+        <regCommon:RequestingPartiesView x:Key="requestingPartiesView"/>
+
+        <DataTemplate DataType="{x:Type local:LoginViewModel}">
+            <ContentControl Content="{StaticResource loginView}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:MainViewModel}">
+            <ContentControl Content="{StaticResource mainView}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type display:DisplayRegistrationViewModel}">
+            <ContentControl Content="{StaticResource displayRegistrationView}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type edit:EditRegistrationViewModel}">
+            <ContentControl Content="{StaticResource editRegistrationView}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type new:NewRegistrationViewModel}">
+            <ContentControl Content="{StaticResource newRegistrationView}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type print:PrintRegistrationViewModel}">
+            <ContentControl Content="{StaticResource printRegistrationView}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type sales:SalesViewModel}">
+            <ContentControl Content="{StaticResource salesView}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type verify:VerificationViewModel}">
+            <ContentControl Content="{StaticResource verificationView}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type lab:LaboratoryViewModel}">
+            <ContentControl Content="{StaticResource labView}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type neuro:NeuroViewModel}">
+            <ContentControl Content="{StaticResource neuroView}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type xray:XRayViewModel}">
+            <ContentControl Content="{StaticResource xrayView}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type reports:ReportsViewModel}">
+            <ContentControl Content="{StaticResource reportsView}"/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type regCommon:RequestingPartiesViewModel}">
+            <ContentControl Content="{StaticResource requestingPartiesView}"/>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

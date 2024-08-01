@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35179602-21DA-4EE6-96BB-09D09713547A}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMDLWpf</RootNamespace>
+    <AssemblyName>CMDLWpf</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>F:\CMDL\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\MySQL\MySQL for Visual Studio 1.0.2\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\MySQL\MySQL for Visual Studio 1.0.2\Assemblies\v4.0\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BloodChemistryItemForm.xaml.cs">
+      <DependentUpon>BloodChemistryItemForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist.cs" />
+    <Compile Include="MedicalTechnologist.cs" />
+    <Compile Include="MySqlDB.cs" />
+    <Compile Include="Pathologist.cs" />
+    <Compile Include="Personnel.cs" />
+    <Compile Include="Physician.cs" />
+    <Compile Include="Psychiatrist.cs" />
+    <Compile Include="Psychologist.cs" />
+    <Compile Include="Radiologist.cs" />
+    <Compile Include="UC_BloodChemistry.xaml.cs">
+      <DependentUpon>UC_BloodChemistry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BloodTyping.xaml.cs">
+      <DependentUpon>UC_BloodTyping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BodyParts.xaml.cs">
+      <DependentUpon>UC_BodyParts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_CultureAndSensitivity.xaml.cs">
+      <DependentUpon>UC_CultureAndSensitivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_DentalCertificate.xaml.cs">
+      <DependentUpon>UC_DentalCertificate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Fecalysis.xaml.cs">
+      <DependentUpon>UC_Fecalysis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_GramStaining.xaml.cs">
+      <DependentUpon>UC_GramStaining.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Hematology_Control.xaml.cs">
+      <DependentUpon>UC_Hematology_Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_MedicalCertificate.xaml.cs">
+      <DependentUpon>UC_MedicalCertificate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Neuro.xaml.cs">
+      <DependentUpon>UC_Neuro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PhysicalExamination.xaml.cs">
+      <DependentUpon>UC_PhysicalExamination.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PregnancyTest.xaml.cs">
+      <DependentUpon>UC_PregnancyTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Serology.xaml.cs">
+      <DependentUpon>UC_Serology.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Urinalysis.xaml.cs">
+      <DependentUpon>UC_Urinalysis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_XRay.xaml.cs">
+      <DependentUpon>UC_XRay.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BloodChemistryItemForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_BloodChemistry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_BloodTyping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_BodyParts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_CultureAndSensitivity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_DentalCertificate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_Fecalysis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_GramStaining.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_Hematology.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Database.cs" />
+    <Compile Include="NotifyPropertyChanged.cs" />
+    <Compile Include="Test_BloodChemistry.cs" />
+    <Compile Include="Test_BloodChemistry_Item.cs" />
+    <Compile Include="Test_BloodTyping.cs" />
+    <Compile Include="Test_CultureAndSensitivity.cs" />
+    <Compile Include="Test_CultureAndSensitivity_Item.cs" />
+    <Compile Include="Test_DentalCertificate.cs" />
+    <Compile Include="Test_Fecalysis.cs" />
+    <Compile Include="Test_GramStaining.cs" />
+    <Compile Include="Test_Hematology.cs" />
+    <Compile Include="Test_MedicalCertificate.cs" />
+    <Compile Include="Test_Neuro.cs" />
+    <Compile Include="Test_PE.cs" />
+    <Compile Include="Test_Pregnancy.cs" />
+    <Compile Include="Test_Serology.cs" />
+    <Compile Include="Test_Serology_Item.cs" />
+    <Compile Include="Test_Urinalysis.cs" />
+    <Compile Include="Test_XRay.cs" />
+    <Compile Include="UC_Hematology.xaml.cs">
+      <DependentUpon>UC_Hematology.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UC_Hematology_Control.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_MedicalCertificate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_Neuro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_PhysicalExamination.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_PregnancyTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_Serology.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_Urinalysis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_XRay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,120 @@
+﻿<Window x:Class="CMDL.SearchClientForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SEARCH CLIENT FORM" Height="600" Width="800" Icon="/CMDL;component/Images/Logo.png" WindowStartupLocation="CenterScreen" xmlns:my="clr-namespace:CMDL">
+    <Window.Resources>
+        <my:ByteToImageSourceConverter x:Key="byteToImageSourceConverter" />
+    </Window.Resources>
+    <Grid>
+        <Viewbox Margin="12" Name="viewbox1" Stretch="Fill">
+            <StackPanel Height="537" Name="stackPanel1" Width="754">
+                <GroupBox Header="Search" Height="56" Name="groupBox1" Width="754" HorizontalAlignment="Left" BorderBrush="LimeGreen" Foreground="Black" Margin="0,0,0,10">
+                    <StackPanel Height="23" Name="stackPanel2" Orientation="Horizontal" Width="730">
+                        <ComboBox Height="23" Margin="0,0,5,0" Name="CbFilter" Width="150">
+                            <ComboBoxItem Content="TODAY" />
+                            <ComboBoxItem Content="CONTROL NO." />
+                            <ComboBoxItem Content="DATE" />
+                            <ComboBoxItem Content="LAST NAME" />
+                            <ComboBoxItem Content="FIRST NAME" />
+                            <ComboBoxItem Content="MIDDLE INITIAL" />
+                            <ComboBoxItem Content="SUFFIX" />
+                            <ComboBoxItem Content="ADDRESS" />
+                            <ComboBoxItem Content="AGE" />
+                            <ComboBoxItem Content="SEX" />
+                            <ComboBoxItem Content="CIVIL STATUS" />
+                            <ComboBoxItem Content="BIRTH DATE" />
+                            <ComboBoxItem Content="BIRTH PLACE" />
+                            <ComboBoxItem Content="REQUESTING PARTY" />
+                            <ComboBoxItem Content="PURPOSE" />
+                            <ComboBoxItem Content="TELEPHONE NO." />
+                            <ComboBoxItem Content="MOBILE NO." />
+                            <ComboBoxItem Content="DISTRICT/BRANCH" />
+                            <ComboBoxItem Content="EXAM" />
+                        </ComboBox>
+                        <TextBox Background="LightYellow" Height="23" Margin="0,0,5,0" Name="TbKeyWord" Width="300" CharacterCasing="Upper" FontFamily="Arial" FontWeight="Bold" Foreground="Blue" />
+                        <Button Content="SEARCH" FontFamily="Arial" FontWeight="Bold" Height="23" Name="BtSearch" Width="100" Margin="0,0,10,0">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="LimeGreen" Offset="0.801" />
+                                    <GradientStop Color="#FF61E561" Offset="0" />
+                                    <GradientStop Color="LimeGreen" Offset="0.5" />
+                                    <GradientStop Color="#FF67E665" Offset="0.45" />
+                                    <GradientStop Color="#FF64E663" Offset="1" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <TextBlock Height="23" Name="TbResults" Text="TOTAL:" Padding="0,3,0,0" />
+                    </StackPanel>
+                </GroupBox>
+                <DataGrid AutoGenerateColumns="False" Height="436" Name="dataGrid1" Width="754" ItemsSource="{Binding}" FontFamily="Arial" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray" Margin="0,0,0,10" CanUserAddRows="False" CanUserDeleteRows="False">
+                    <DataGrid.Columns>
+                        <DataGridCheckBoxColumn Header="Select" Binding="{Binding Select}" />
+                        <DataGridTextColumn Header="Time In" Width="SizeToCells" Binding="{Binding TimeIn}" IsReadOnly="True" />
+                        <DataGridTextColumn Header="ControlNo" Width="SizeToCells" Binding="{Binding ControlNo}" Foreground="Red" IsReadOnly="True"/>
+                        <DataGridTemplateColumn Header="Photo" Width="SizeToHeader" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate />
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding Path=Photo, Converter={StaticResource byteToImageSourceConverter}}" Height="40" Width="50"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Patient's Name" Width="*" Binding="{Binding FullName}" IsReadOnly="True" FontWeight="Bold"/>
+                        <DataGridTemplateColumn Header="Requesting Party" Width="*">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate />
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Text="{Binding RequestingParty}" IsReadOnly="True" AcceptsReturn="True" TextWrapping="WrapWithOverflow" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Status" Width="120">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate />
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="{Binding Status}" Name="BtStatus" Click="BtStatus_Click">
+                                        <Button.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="LimeGreen" Offset="0.801" />
+                                                <GradientStop Color="#FF61E561" Offset="0" />
+                                                <GradientStop Color="LimeGreen" Offset="0.5" />
+                                                <GradientStop Color="#FF67E665" Offset="0.45" />
+                                                <GradientStop Color="#FF64E663" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="btCXRNormal" Content="Hep A Normal" Width="110" Margin="0,0,5,0">
+                        
+                    </Button>
+                    <Button Name="btHepANormal" Content="Hep B Normal" Width="110" Margin="0,0,5,0">
+
+                    </Button>
+                    <Button Name="btBloodTestNormal" Content="Blood Test Normal" Width="110" Margin="0,0,5,0">
+
+                    </Button>
+                    <Button Name="btHepBNormal" Content="CXR Normal" Width="110" Margin="0,0,5,0">
+
+                    </Button>
+                    <Button Name="btClearCheck" Content="Clear Check" Width="110">
+
+                    </Button>
+
+                </StackPanel>
+
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</Window>

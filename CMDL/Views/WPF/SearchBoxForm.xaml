@@ -1,0 +1,14 @@
+﻿<Window x:Class="CMDL.SearchBoxForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SEARCH BOX FORM" Height="170" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        
+        <TextBox Grid.Row="0" Margin="5" Background="LightYellow" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="50" FontWeight="Bold" Name="tbSearchBox" CharacterCasing="Upper" />
+        <Button Grid.Row="1" Margin="5" Content="OK" Name="btOK"/>
+    </Grid>
+</Window>

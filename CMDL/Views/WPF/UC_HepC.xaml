@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="CMDL.WPF.UC_HepC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="679" Height="349">
+    <Grid>
+        <Viewbox Margin="5" Name="viewbox1" Stretch="Fill">
+            <StackPanel Height="339" Name="stackPanel1" Orientation="Vertical" Width="669">
+                <StackPanel Height="140" Name="stackPanel3" Orientation="Horizontal" Width="669">
+                    <StackPanel Height="140" Name="stackPanel4" Width="111.5">
+                        <TextBlock FontWeight="Bold" Foreground="Blue" Height="23" Name="textBlock4" Text="Test" TextAlignment="Center"><TextBlock.Background><LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"><GradientStop Color="#FFD6D6D6" Offset="1" /><GradientStop Color="#FFF0F0F0" Offset="0" /><GradientStop Color="#FFD6D6D6" Offset="0.5" /><GradientStop Color="#FFE3E3E3" Offset="0.467" /></LinearGradientBrush></TextBlock.Background></TextBlock>
+                        <TextBlock Foreground="Blue" Height="23" Margin="0,0,0,5" Name="textBlock10" TextAlignment="Center" Text="Anti HCV" />
+                    </StackPanel>
+                    <StackPanel Height="140" IsEnabled="{Binding Enabled}" Name="SPanelResults" Width="111.5">
+                        <TextBlock FontWeight="Bold" Foreground="Blue" Height="23" Name="textBlock5" Text="Results" TextAlignment="Center"><TextBlock.Background><LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"><GradientStop Color="#FFD6D6D6" Offset="1" /><GradientStop Color="#FFF0F0F0" Offset="0" /><GradientStop Color="#FFD6D6D6" Offset="0.5" /><GradientStop Color="#FFE3E3E3" Offset="0.467" /></LinearGradientBrush></TextBlock.Background></TextBlock>
+                        <ComboBox Height="23" Margin="0,0,0,5" Name="cbAntiHCVResults" Width="111.5">
+                            <ComboBoxItem Content="NOT DONE" />
+                            <ComboBoxItem Content="REACTIVE" />
+                            <ComboBoxItem Content="NONREACTIVE" />
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Height="140" Name="stackPanel7" Width="153">
+                        <TextBlock FontWeight="Bold" Foreground="Blue" Height="23" Name="textBlock6" Text="Test Kit" TextAlignment="Center"><TextBlock.Background><LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"><GradientStop Color="#FFD6D6D6" Offset="1" /><GradientStop Color="#FFF0F0F0" Offset="0" /><GradientStop Color="#FFD6D6D6" Offset="0.5" /><GradientStop Color="#FFE3E3E3" Offset="0.467" /></LinearGradientBrush></TextBlock.Background></TextBlock>
+                        <TextBlock Foreground="Blue" Height="23" Margin="0,0,0,5" Name="tbAntiHCVTestKit" TextAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Height="140" Name="stackPanel8" Width="111.5">
+                        <TextBlock FontWeight="Bold" Foreground="Blue" Height="23" Name="textBlock7" Text="Lot No" TextAlignment="Center"><TextBlock.Background><LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"><GradientStop Color="#FFD6D6D6" Offset="1" /><GradientStop Color="#FFF0F0F0" Offset="0" /><GradientStop Color="#FFD6D6D6" Offset="0.5" /><GradientStop Color="#FFE3E3E3" Offset="0.467" /></LinearGradientBrush></TextBlock.Background></TextBlock>
+                        <TextBlock Foreground="Blue" Height="23" Margin="0,0,0,5" Name="tbAntiHCVLotNo" TextAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Height="140" Name="stackPanel9" Width="70">
+                        <TextBlock FontWeight="Bold" Foreground="Blue" Height="23" Name="textBlock8" Text="Expiry" TextAlignment="Center"><TextBlock.Background><LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"><GradientStop Color="#FFD6D6D6" Offset="1" /><GradientStop Color="#FFF0F0F0" Offset="0" /><GradientStop Color="#FFD6D6D6" Offset="0.5" /><GradientStop Color="#FFE3E3E3" Offset="0.467" /></LinearGradientBrush></TextBlock.Background></TextBlock>
+                        <TextBlock Foreground="Blue" Height="23" Margin="0,0,0,5" Name="tbAntiHCVExpiry" TextAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Height="140" IsEnabled="{Binding Enabled}" Name="SPanelRemarks" Width="111.5">
+                        <TextBlock FontWeight="Bold" Foreground="Blue" Height="23" Name="textBlock9" Text="Remarks" TextAlignment="Center"><TextBlock.Background><LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"><GradientStop Color="#FFD6D6D6" Offset="1" /><GradientStop Color="#FFF0F0F0" Offset="0" /><GradientStop Color="#FFD6D6D6" Offset="0.5" /><GradientStop Color="#FFE3E3E3" Offset="0.467" /></LinearGradientBrush></TextBlock.Background></TextBlock>
+                        <TextBox Background="LightYellow" CharacterCasing="Upper" FontWeight="Bold" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="tbAntiHCVRemarks" Width="111.5" />
+                    </StackPanel>
+                </StackPanel>
+                <GroupBox BorderBrush="Green" FontFamily="Segoe UI" FontWeight="Bold" Foreground="Blue" Header="SIGNATORIES" Height="168" HorizontalAlignment="Left" IsEnabled="{Binding Enabled}" Margin="0,0,0,5" Name="GBoxSignatories" Width="299">
+                    <StackPanel Height="138" Name="stackPanel2" Width="279">
+                        <TextBlock FontWeight="Normal" Height="23" Name="textBlock1" Padding="5" Text="Pathologist" />
+                        <TextBlock FontWeight="Bold" Height="23" Name="TbPathologist" Padding="5" />
+                        <TextBlock FontWeight="Normal" Height="23" Name="textBlock2" Padding="5" Text="Medical Technologist 1" />
+                        <TextBlock FontWeight="Bold" Height="23" Name="TbMedTech_1" Padding="5" />
+                        <TextBlock FontWeight="Normal" Height="23" Name="textBlock3" Padding="5" Text="Medical Technologist 2" />
+                        <ComboBox Height="23" Name="CbMedTech_2" Width="279" />
+                    </StackPanel>
+                </GroupBox>
+                <StackPanel Height="23" HorizontalAlignment="Right" Name="stackPanel5" Orientation="Horizontal" Width="205">
+                    <Button Content="SAVE RECORD" FontFamily="Arial" FontWeight="Bold" Height="23" Margin="0,0,5,0" Name="BtSaveRecord" Width="100">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="LimeGreen" Offset="0.801" />
+                                <GradientStop Color="#FF61E561" Offset="0" />
+                                <GradientStop Color="LimeGreen" Offset="0.5" />
+                                <GradientStop Color="#FF67E665" Offset="0.45" />
+                                <GradientStop Color="#FF64E663" Offset="1" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="PREVIEW" FontFamily="Arial" FontWeight="Bold" Height="23" Name="BtPreview" Width="100">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="LimeGreen" Offset="0.801" />
+                                <GradientStop Color="#FF61E561" Offset="0" />
+                                <GradientStop Color="LimeGreen" Offset="0.5" />
+                                <GradientStop Color="#FF67E665" Offset="0.45" />
+                                <GradientStop Color="#FF64E663" Offset="1" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</UserControl>

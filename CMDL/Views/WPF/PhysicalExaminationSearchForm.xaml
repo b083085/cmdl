@@ -1,0 +1,99 @@
+﻿<Window x:Class="CMDL.PhysicalExaminationSearchForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PHYSICAL EXAMINATION FORM" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Search:" Margin="5"/>
+            <ComboBox Width="250" Margin="5" Name="cbSearch">
+                <ComboBoxItem Content="TODAY"/>
+                <ComboBoxItem Content="DATE REGISTERED"/>
+                <ComboBoxItem Content="CONTROL NO"/>
+                <ComboBoxItem Content="LASTNAME"/>
+                <ComboBoxItem Content="FIRSTNAME"/>
+                <ComboBoxItem Content="MIDDLENAME"/>
+                <ComboBoxItem Content="AGE"/>
+                <ComboBoxItem Content="GENDER"/>
+                <ComboBoxItem Content="CIVIL STATUS"/>
+                <ComboBoxItem Content="BIRTH DATE"/>
+                <ComboBoxItem Content="PURPOSE"/>
+                <ComboBoxItem Content="EMPLOYER"/>
+                <ComboBoxItem Content="DISTRICT / BRANCH"/>
+                <ComboBoxItem Content="TEST"/>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+            <Label Content="Total:" Margin="5"/>
+            <TextBox Name="tbTotal" Background="LightYellow" Margin="5" Text="0" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" FontWeight="Bold" BorderBrush="Black" IsReadOnly="True"/>
+            <Label Content="Done:" Margin="5"/>
+            <TextBox Name="tbTotalDone" Background="LightYellow" Margin="5" Text="0" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" FontWeight="Bold" BorderBrush="Black" IsReadOnly="True"/>
+            <Label Content="Eval. Pending:" Margin="5,5,5,0"/>
+            <TextBox Name="tbTotalEvalPending" Background="LightYellow" Margin="5" Text="0" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" FontWeight="Bold" BorderBrush="Black" IsReadOnly="True"/>
+        </StackPanel>
+        <GroupBox Grid.Row="1" Grid.ColumnSpan="2">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <Label Content="Client List" FontWeight="Bold"/>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <DataGrid Grid.Row="1" Margin="5" Grid.ColumnSpan="2" ItemsSource="{Binding}" CanUserAddRows="False" CanUserDeleteRows="False" AlternatingRowBackground="AliceBlue" HorizontalGridLinesBrush="AliceBlue" AutoGenerateColumns="False" VerticalGridLinesBrush="AliceBlue" Name="dgClientList">
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Date" Width="100" IsReadOnly="True" Binding="{Binding Path=DateRegistered,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Control No." Width="100" IsReadOnly="True" Binding="{Binding Path=ControlNo,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
+                    <DataGridTextColumn Header="Priority No." Width="70" IsReadOnly="True" Binding="{Binding Path=PriorityNo,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Last Name" Width="*" IsReadOnly="True" Binding="{Binding Path=LastName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="First Name" Width="*" IsReadOnly="True" Binding="{Binding Path=FirstName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="MI" Width="SizeToHeader" IsReadOnly="True" Binding="{Binding Path=MiddleName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTemplateColumn Header="Requesting Party" Width="*">
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate />
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Path=RequestingParty}" Background="LightYellow" TextWrapping="WrapWithOverflow" IsReadOnly="True"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Status" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Status" Name="btStatus" Click="btStatus_Click" Background="Orange" Foreground="Black"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </GroupBox>
+        <GroupBox Grid.Row="2" Grid.ColumnSpan="2">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <Label Content="Status List" FontWeight="Bold"/>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <DataGrid Grid.Row="1" Margin="5" Grid.ColumnSpan="2" ItemsSource="{Binding}" CanUserAddRows="False" CanUserDeleteRows="False" AlternatingRowBackground="AliceBlue" HorizontalGridLinesBrush="AliceBlue" AutoGenerateColumns="False" VerticalGridLinesBrush="AliceBlue" Name="dgStatusList">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Date" Width="100" IsReadOnly="True" Binding="{Binding Path=DateRegistered,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Control No." Width="100" IsReadOnly="True" Binding="{Binding Path=ControlNo,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Foreground="Red"/>
+                    <DataGridTextColumn Header="Priority No." Width="70" IsReadOnly="True" Binding="{Binding Path=PriorityNo,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Last Name" Width="*" IsReadOnly="True" Binding="{Binding Path=LastName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="First Name" Width="*" IsReadOnly="True" Binding="{Binding Path=FirstName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="MI" Width="SizeToHeader" IsReadOnly="True" Binding="{Binding Path=MiddleName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Status" Width="*" IsReadOnly="True" Binding="{Binding Path=Status,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </GroupBox>
+    </Grid>
+</Window>

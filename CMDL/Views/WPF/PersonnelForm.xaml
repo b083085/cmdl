@@ -1,0 +1,87 @@
+﻿<Window x:Class="CMDL.PersonnelForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PERSONNEL FORM" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Column="0">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <Label Content="List" FontWeight="Bold"/>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <ListBox Background="LightYellow" Margin="5" Name="lbList"/>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <Label Content="Details" FontWeight="Bold"/>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Content="ID"/>
+                <Label Grid.Column="0" Grid.Row="1" Content="Name"/>
+                <Label Grid.Column="0" Grid.Row="2" Content="Title"/>
+                <Label Grid.Column="0" Grid.Row="3" Content="License No"/>
+                <Label Grid.Column="0" Grid.Row="4" Content="Department"/>
+                <Label Grid.Column="0" Grid.Row="5" Content="Photo"/>
+                <Label Grid.Column="0" Grid.Row="8" Content="Signature"/>
+
+
+                <TextBox Grid.Column="1" Grid.Row="0" IsReadOnly="True" Background="LightYellow" Margin="2" Name="tbID"/>
+                <TextBox Grid.Column="1" Grid.Row="1" Background="LightYellow" Margin="2" Name="tbName"/>
+                <TextBox Grid.Column="1" Grid.Row="2" Background="LightYellow" Margin="2" Name="tbTitle"/>
+                <TextBox Grid.Column="1" Grid.Row="3" Background="LightYellow" Margin="2" Name="tbLicenseNo"/>
+                <ComboBox Grid.Column="1" Grid.Row="4" Margin="2" Name="cbDepartment">
+                    <ComboBoxItem Content=""/>
+                    <ComboBoxItem Content="MEDICAL TECHNOLOGIST"/>
+                    <ComboBoxItem Content="PATHOLOGIST"/>
+                    <ComboBoxItem Content="RADIOLOGIST"/>
+                    <ComboBoxItem Content="PSYCHOLOGIST"/>
+                    <ComboBoxItem Content="PSYCHIATRIST"/>
+                    <ComboBoxItem Content="DENTIST"/>
+                    <ComboBoxItem Content="PHYSICIAN"/>
+                    <ComboBoxItem Content="NURSE"/>
+                </ComboBox>
+                <Border Grid.Column="1" Grid.Row="5" BorderBrush="Black" BorderThickness="2" Grid.RowSpan="3" Width="100" Margin="5" HorizontalAlignment="Left">
+                    <Image Name="imgPhoto"/>
+                </Border>
+                <Button Grid.Column="1" Grid.Row="7" HorizontalAlignment="Right" Width="100" Margin="2" Content="Browse..." Name="btPhotoBrowse"/>
+                <Border Grid.Column="1" Grid.Row="8" BorderBrush="Black" BorderThickness="2" Grid.RowSpan="3" Width="100" Margin="5" HorizontalAlignment="Left">
+                    <Image Name="imgSignature"/>
+                </Border>
+                <Button Grid.Column="1" Grid.Row="10" HorizontalAlignment="Right" Width="100" Margin="2" Content="Browse..." Name="btSignatureBrowse"/>
+                <CheckBox Content="Is Available" Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" Name="cbIsAvailable"/>
+                <Button Grid.Column="1" Grid.Row="13" Width="100" Margin="3" Content="Save Record" HorizontalAlignment="Right" Name="btSaveRecord"/>
+                <Button Grid.Column="1" Grid.Row="14" Width="100" Margin="3" Content="Clear" HorizontalAlignment="Right" Name="btClearRecord"/>
+            </Grid>
+
+        </GroupBox>
+    </Grid>
+</Window>

@@ -1,0 +1,18 @@
+﻿<Window x:Class="CMDL.LoginForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LOGIN" 
+        Height="275" 
+        Width="525" 
+        Icon="/CMDL;component/Images/Logo.png" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <ContentControl x:Name="contentControl1"/>
+        <Label Grid.Row="1" Name="LbVersion" FontSize="10"/>
+    </Grid>
+</Window>

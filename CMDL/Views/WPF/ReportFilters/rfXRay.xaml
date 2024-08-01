@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="CMDL.Views.WPF.ReportFilters.rfXRay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" 
+             d:DesignWidth="1024"
+             Height="40"
+             Background="#fff">
+    <DockPanel Margin="5">
+        <Label Content="Date from:"/>
+        <DatePicker Name="dpDateFrom"
+                    Width="120"
+                    VerticalAlignment="Center"/>
+        <Label Content="Date to:"/>
+        <DatePicker Name="dpDateTo"
+                    Width="120"
+                    VerticalAlignment="Center"/>
+        <Label Content="Gender:"/>
+        <ComboBox Name="cbGender"
+                  Width="80"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Center"/>
+        <Label Content="Radiologist:"/>
+        <ComboBox Name="cbRadiologist"
+                  Width="200"
+                  VerticalAlignment="Center"/>
+        <Button Name="btnSearch"
+                DockPanel.Dock="Right"
+                Content="Search"
+                Width="80"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"/>
+    </DockPanel>
+</UserControl>

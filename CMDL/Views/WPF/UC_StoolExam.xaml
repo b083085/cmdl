@@ -1,0 +1,140 @@
+﻿<UserControl x:Class="CMDL.UC_StoolExam"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="649" Height="859" FontWeight="Normal">
+    <Grid Margin="5">
+        <StackPanel Name="stackPanel1">
+            <GroupBox BorderBrush="Green" Foreground="Blue" Header="MACROSCOPIC" Height="123" Name="GbMacroscopic" Width="299" FontWeight="Bold">
+                <StackPanel Height="92" Name="stackPanel4" Orientation="Horizontal" Width="279">
+                    <StackPanel Height="92" Name="stackPanel6" Width="279">
+                        <TextBlock Height="23" Name="textBlock3" Padding="5" Text="Color" FontWeight="Normal" />
+                        <ComboBox Height="23" Name="CbColor" Width="279" Text="{Binding Color}" IsEditable="True" Background="LightYellow" Foreground="Blue">
+                            <ComboBoxItem Content="BROWN" />
+                            <ComboBoxItem Content="YELLOWISH BROWN" />
+                            <ComboBoxItem Content="DARK BROWN" />
+                            <ComboBoxItem Content="BLACK" />
+                            <ComboBoxItem Content="GREENISH YELLOW" />
+                            <ComboBoxItem Content="LIGHT BROWN" />
+                            <ComboBoxItem Content="REDISH BROWN" />
+                            <ComboBoxItem Content="LIGHT YELLOW" />
+                            <ComboBoxItem Content="YELLOWISH BROWN" />
+                            <ComboBoxItem Content="GREENISH YELLOW" />
+                            <ComboBoxItem Content="GREENISH BROWN" />
+                        </ComboBox>
+                        <TextBlock Height="23" Name="textBlock4" Padding="5" Text="Consistency" FontWeight="Normal" />
+                        <ComboBox Height="23" Name="CbConsistency" Width="279" Text="{Binding Consistency}" IsEditable="True" Background="LightYellow" Foreground="Blue">
+                            <ComboBoxItem Content="SOFT" />
+                            <ComboBoxItem Content="FORMED" />
+                            <ComboBoxItem Content="MUCOID" />
+                            <ComboBoxItem Content="SLIGHTLY BLOODY" />
+                            <ComboBoxItem Content="MUCOID SOFT" />
+                            <ComboBoxItem Content="MUCOID WATERY" />
+                            <ComboBoxItem Content="WATERY" />
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox BorderBrush="Green" Foreground="Blue" Header="MICROSCOPIC" Height="315" Name="GbMicroscopic" Width="299" FontWeight="Bold">
+                <StackPanel Height="276" Name="stackPanel9" Width="279">
+                    <Label Content="Leukocytes" Foreground="Blue" Height="23" Margin="0" Name="label5" Padding="0" Width="110" HorizontalAlignment="Left" FontWeight="Normal" />
+                    <ComboBox Background="LightYellow" Foreground="Blue" Height="23" Name="CBLeukocytes" Text="{Binding Leukocytes}" Width="279" IsEditable="True">
+                        <ComboBoxItem Content="NONE SEEN" />
+                    </ComboBox>
+                    <Label Content="Erythrocytes" Foreground="Blue" Height="23" Margin="0" Name="label6" Padding="0" Width="110" HorizontalAlignment="Left" FontWeight="Normal" />
+                    <ComboBox Background="LightYellow" Foreground="Blue" Height="23" Name="CBErythrocytes" Text="{Binding Erythrocytes}" Width="279" IsEditable="True">
+                        <ComboBoxItem Content="NONE SEEN" />
+                    </ComboBox>
+                    <Label Content="Protozoan" Foreground="Blue" Height="23" Margin="0" Name="label7" Padding="0" Width="110" HorizontalAlignment="Left" FontWeight="Normal" />
+                    <ComboBox Background="LightYellow" Foreground="Blue" Height="23" Name="CBProtozoan" Text="{Binding Protozoan}" Width="279" IsEditable="True">
+                        <ComboBoxItem Content="NEGATIVE" />
+                    </ComboBox>
+                    <Label Content="Yeast Cells" Foreground="Blue" Height="23" Margin="0" Name="label8" Padding="0" Width="110" HorizontalAlignment="Left" FontWeight="Normal" />
+                    <ComboBox Background="LightYellow" Foreground="Blue" Height="23" Name="CBYeastCells" Text="{Binding Yeast_Cells}" Width="279" IsEditable="True">
+                        <ComboBoxItem Content="0.37" />
+                        <ComboBoxItem Content="0.38" />
+                        <ComboBoxItem Content="0.39" />
+                        <ComboBoxItem Content="0.40" />
+                        <ComboBoxItem Content="0.41" />
+                        <ComboBoxItem Content="0.42" />
+                        <ComboBoxItem Content="0.43" />
+                        <ComboBoxItem Content="0.44" />
+                        <ComboBoxItem Content="0.45" />
+                        <ComboBoxItem Content="0.46" />
+                        <ComboBoxItem Content="0.47" />
+                        <ComboBoxItem Content="0.48" />
+                        <ComboBoxItem Content="0.49" />
+                        <ComboBoxItem Content="0.50" />
+                        <ComboBoxItem Content="0.51" />
+                        <ComboBoxItem Content="0.52" />
+                    </ComboBox>
+                    <Label Content="Ova Of Parasite" Foreground="Blue" Height="23" Margin="0" Name="label9" Padding="0" Width="110" HorizontalAlignment="Left" FontWeight="Normal" />
+                    <ComboBox Background="LightYellow" Foreground="Blue" Height="23" Name="CBOvaOfParasite" Text="{Binding Ova_Of_Parasite}" Width="279" IsEditable="True">
+                        <ComboBoxItem Content="NEGATIVE" />
+                    </ComboBox>
+                    <Label Content="Fat Globules" Foreground="Blue" Height="23" Name="label4" Padding="0" Width="110" FontWeight="Normal" HorizontalAlignment="Left" />
+                    <ComboBox Background="LightYellow" Foreground="Blue" Height="23" Name="CBFatGlobules" Text="{Binding Fat_Globules}" Width="279" IsEditable="True">
+                        <ComboBoxItem Content="0.03" />
+                        <ComboBoxItem Content="0.04" />
+                        <ComboBoxItem Content="0.05" />
+                        <ComboBoxItem Content="0.06" />
+                        <ComboBoxItem Content="0.07" />
+                        <ComboBoxItem Content="0.08" />
+                        <ComboBoxItem Content="0.09" />
+                        <ComboBoxItem Content="0.10" />
+                    </ComboBox>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox BorderBrush="Green" Foreground="Blue" Header="CHEMICAL ANALYSIS" Height="84" Name="GbChemicalAnalysis" Width="299" FontWeight="Bold">
+                <StackPanel Height="46" Name="stackPanel3" Width="279">
+                    <Label Foreground="Blue" Height="23" Margin="0" Name="label1" Padding="0" Width="110" HorizontalAlignment="Left" Content="Occult Blood" FontWeight="Normal" />
+                    <ComboBox Background="LightYellow" Foreground="Blue" Height="23" Name="CBOccultBlood" Text="{Binding Occult_Blood}" Width="279" IsEditable="True">
+                        <ComboBoxItem Content="0" />
+                        <ComboBoxItem Content="0.01" />
+                        <ComboBoxItem Content="0.02" />
+                        <ComboBoxItem Content="0.03" />
+                        <ComboBoxItem Content="0.04" />
+                        <ComboBoxItem Content="0.05" />
+                    </ComboBox>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox BorderBrush="Green" FontFamily="Arial" Foreground="Blue" Header="REMARKS" Height="167" Name="GbRemarks" Width="299" FontWeight="Bold">
+                <TextBox Background="LightYellow" Height="142" Name="TbRemarks" Width="279" Text="{Binding Remarks}" CharacterCasing="Upper" FontWeight="Normal" Foreground="Blue" TextWrapping="WrapWithOverflow" />
+            </GroupBox>
+            <GroupBox BorderBrush="Green" FontFamily="Segoe UI" FontWeight="Bold" Foreground="Blue" Header="SIGNATORIES" Height="123" IsEnabled="{Binding Enabled}" Name="GBoxSignatories" Width="299" Margin="0,0,0,10">
+                <StackPanel Height="92" Name="stackPanel2" Width="279">
+                    <TextBlock FontWeight="Normal" Height="23" Name="textBlock1" Padding="5" Text="Pathologist" />
+                    <TextBlock FontWeight="Bold" Height="23" Name="TbPathologist" Padding="5" Text="{Binding Pathologist}" />
+                    <TextBlock FontWeight="Normal" Height="23" Name="textBlock2" Padding="5" Text="Medical Technologist" />
+                    <TextBlock FontWeight="Bold" Height="23" Name="TbMedTech" Padding="5" Text="{Binding MedTech}" />
+                </StackPanel>
+            </GroupBox>
+            <StackPanel Height="23" Name="stackPanel5" Orientation="Horizontal" Width="205" HorizontalAlignment="Right">
+                <Button Content="SAVE RECORD" FontFamily="Arial" FontWeight="Bold" Height="23" Margin="0,0,5,0" Name="BtSaveRecord" Width="100">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="LimeGreen" Offset="0.801" />
+                            <GradientStop Color="#FF61E561" Offset="0" />
+                            <GradientStop Color="LimeGreen" Offset="0.5" />
+                            <GradientStop Color="#FF67E665" Offset="0.45" />
+                            <GradientStop Color="#FF64E663" Offset="1" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button Content="PREVIEW" FontFamily="Arial" FontWeight="Bold" Height="23" Name="BtPreview" Width="100">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="LimeGreen" Offset="0.801" />
+                            <GradientStop Color="#FF61E561" Offset="0" />
+                            <GradientStop Color="LimeGreen" Offset="0.5" />
+                            <GradientStop Color="#FF67E665" Offset="0.45" />
+                            <GradientStop Color="#FF64E663" Offset="1" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

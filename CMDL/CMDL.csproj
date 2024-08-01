@@ -1,0 +1,980 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6539B513-A9DA-41EA-9138-AD617A62258C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMDL</RootNamespace>
+    <AssemblyName>CMDL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\PC-DATABASE\Users\DATABASE\Desktop\CMDL App\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\PC-DATABASE\Users\DATABASE\Desktop\CMDL App\</UpdateUrl>
+    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationVersion>201.4.8.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DC3BA220953528E760C104FB9B6C976D99FC1003</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CMDL_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.0.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.2\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.2.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Controls.2.2.2\lib\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.2.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Imaging.2.2.2\lib\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging.Formats, Version=2.2.4.0, Culture=neutral, PublicKeyToken=8065ed5a639199a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Imaging.Formats.2.2.5\lib\AForge.Imaging.Formats.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.2.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Math.2.2.2\lib\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.0.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.2\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.2.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.2\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\CyberMessage.cs" />
+    <Compile Include="Common\FilterConstants.cs" />
+    <Compile Include="Common\FontGenerator.cs" />
+    <Compile Include="Common\GlobalInstance.cs" />
+    <Compile Include="Common\NotifyPropertyChanged.cs" />
+    <Compile Include="Common\PrintDoc.cs" />
+    <Compile Include="Converters\FilterDateRangeVisibilityConverter.cs" />
+    <Compile Include="Converters\FilterKeywordVisibilityConverter.cs" />
+    <Compile Include="Converters\FilterVisibilityConverter.cs" />
+    <Compile Include="Converters\NegateReadOnlyVisibilityConverter.cs" />
+    <Compile Include="Converters\PrintVisibilityConverter.cs" />
+    <Compile Include="Converters\ReadOnlyConverter.cs" />
+    <Compile Include="Converters\ReadOnlyVisibilityConverter.cs" />
+    <Compile Include="Converters\SaveRecordContentConverter.cs" />
+    <Compile Include="DAL\BloodChemistry\BloodChemistryDB.cs" />
+    <Compile Include="DAL\DataContext.cs" />
+    <Compile Include="DAL\Global.cs" />
+    <Compile Include="DAL\Neuro\NeuroRepository.cs" />
+    <Compile Include="DAL\Neuro\NeuroV3_PrintDoc.cs" />
+    <Compile Include="DAL\Neuro\NeuroV2_PrintDoc.cs" />
+    <Compile Include="DAL\Neuro\NeuroV1_PrintDoc.cs" />
+    <Compile Include="Models\ClientV2.cs" />
+    <Compile Include="Models\NeuroItemV2.cs" />
+    <Compile Include="Models\NeuroV1.cs" />
+    <Compile Include="Models\NeuroV2.cs" />
+    <Compile Include="Models\Signatory.cs" />
+    <Compile Include="Models\UserAccess.cs" />
+    <Compile Include="Reports\BloodChemistryReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BloodChemistryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAL\BloodChemistry\BloodChemistry_Data.cs" />
+    <Compile Include="DAL\BloodChemistry\Blood_Chemistry_ItemDB.cs" />
+    <Compile Include="DAL\BloodChemistry\Blood_Chemistry_Items_Data.cs" />
+    <Compile Include="Reports\DataSource\ClientRep.cs" />
+    <Compile Include="Reports\DataSource\XRayRep.cs" />
+    <Compile Include="Reports\XRaySummaryReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XRaySummaryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\WPF\CCFNoForm.xaml.cs">
+      <DependentUpon>CCFNoForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BloodTyping\BloodTypingDB.cs" />
+    <Compile Include="DAL\PapSmear\PapSmear.cs" />
+    <Compile Include="DAL\PapSmear\PapSmear_PrintDoc.cs" />
+    <Compile Include="DAL\Serology\Serology_Data1.cs" />
+    <Compile Include="DAL\cmdldbDataSet.cs">
+      <DependentUpon>cmdldbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CyberModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CyberModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\reg.cs" />
+    <Compile Include="Converters\SaveRecordConverter.cs" />
+    <Compile Include="DAL\CultureAndSensitivity\CultureAndSensitivity_Data.cs" />
+    <Compile Include="DAL\CultureAndSensitivity\CultureAndSensitivity_PrintDoc.cs" />
+    <Compile Include="DAL\FacilityDB.cs" />
+    <Compile Include="DAL\CultureAndSensitivity\CultureAndSensitivityDB.cs" />
+    <Compile Include="Views\Winforms\CrystalReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\CrystalReportForm.Designer.cs">
+      <DependentUpon>CrystalReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CultureAndSensitivityReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CultureAndSensitivityReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\WPF\DateForm.xaml.cs">
+      <DependentUpon>DateForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DrugTestPriority.cs" />
+    <Compile Include="Views\WPF\DrugTestSearchForm.xaml.cs">
+      <DependentUpon>DrugTestSearchForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\DrugTestSelectStatusForm.xaml.cs">
+      <DependentUpon>DrugTestSelectStatusForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\LoginForm.xaml.cs">
+      <DependentUpon>LoginForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BarCode.cs" />
+    <Compile Include="Views\Winforms\NewRequestingPartyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\NewRequestingPartyForm.Designer.cs">
+      <DependentUpon>NewRequestingPartyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Winforms\PasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\PasswordForm.Designer.cs">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\NeuroTemplatesForm.xaml.cs">
+      <DependentUpon>NeuroTemplatesForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\NeuroV3Page.xaml.cs">
+      <DependentUpon>NeuroV3Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\NeuroV2Page.xaml.cs">
+      <DependentUpon>NeuroV2Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\PasswordForm.xaml.cs">
+      <DependentUpon>PasswordForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\PersonnelForm.xaml.cs">
+      <DependentUpon>PersonnelForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\PeStatusForm.xaml.cs">
+      <DependentUpon>PeStatusForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PhysicalExaminationPriority.cs" />
+    <Compile Include="Views\WPF\PhysicalExaminationSearchForm.xaml.cs">
+      <DependentUpon>PhysicalExaminationSearchForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Winforms\RequestingPartyListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\RequestingPartyListForm.Designer.cs">
+      <DependentUpon>RequestingPartyListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\ReportFilters\IFilterEvent.cs" />
+    <Compile Include="Views\WPF\ReportFilters\rfXRay.xaml.cs">
+      <DependentUpon>rfXRay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\ReportForm.xaml.cs">
+      <DependentUpon>ReportForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\ResultForm.xaml.cs">
+      <DependentUpon>ResultForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\SearchBoxForm.xaml.cs">
+      <DependentUpon>SearchBoxForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\SearchClientForm.xaml.cs">
+      <DependentUpon>SearchClientForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SearchClientInfo.cs" />
+    <Compile Include="DAL\StoredProcedureParameter.cs" />
+    <Compile Include="Views\Winforms\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_BloodChemistry.xaml.cs">
+      <DependentUpon>UC_BloodChemistry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\CustomControls\ConnectionControl.xaml.cs">
+      <DependentUpon>ConnectionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\CustomControls\LoginControl.xaml.cs">
+      <DependentUpon>LoginControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Winforms\ExamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\ExamForm.designer.cs">
+      <DependentUpon>ExamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Winforms\OfficePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\OfficePage.Designer.cs">
+      <DependentUpon>OfficePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Winforms\BetweenDatesPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\BetweenDatesPage.Designer.cs">
+      <DependentUpon>BetweenDatesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\BloodTyping\BloodTyping_PrintDoc.cs" />
+    <Compile Include="DAL\CBC\CBCDB.cs" />
+    <Compile Include="DAL\CBC\CBC_PrintDoc.cs" />
+    <Compile Include="DAL\ClientDB.cs" />
+    <Compile Include="DAL\SettingsDB.cs" />
+    <Compile Include="Views\Winforms\Reg_PrintPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\Reg_PrintPreview.Designer.cs">
+      <DependentUpon>Reg_PrintPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GramStaining\GramsDB.cs" />
+    <Compile Include="DAL\GramStaining\GramsStaining_PrintDoc.cs" />
+    <Compile Include="DAL\IPageImplementer.cs" />
+    <Compile Include="DAL\MedicalCertificate\MedicalCertificateDB.cs" />
+    <Compile Include="DAL\MySQLMethodImplementer.cs" />
+    <Compile Include="DAL\PE\PEDB.cs" />
+    <Compile Include="DAL\PE\PE_PrintDoc.cs" />
+    <Compile Include="DAL\PregnancyTest\PregDB.cs" />
+    <Compile Include="DAL\PregnancyTest\PregTest_PrintDoc.cs" />
+    <Compile Include="Views\Winforms\ReportPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\ReportPage.Designer.cs">
+      <DependentUpon>ReportPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Winforms\SalesStatusPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\SalesStatusPage.Designer.cs">
+      <DependentUpon>SalesStatusPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Serology\SerologyDB.cs" />
+    <Compile Include="DAL\BloodTyping\BloodTyping_Data.cs" />
+    <Compile Include="Views\Winforms\Camera_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\Camera_Form.designer.cs">
+      <DependentUpon>Camera_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CBC\CBC_Data.cs" />
+    <Compile Include="Views\Winforms\ClientVerificationPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\ClientVerificationPage.Designer.cs">
+      <DependentUpon>ClientVerificationPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Winforms\CyberPrintPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\CyberPrintPreview.Designer.cs">
+      <DependentUpon>CyberPrintPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CyberPropertyChanged.cs" />
+    <Compile Include="Views\Winforms\DatePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\DatePage.Designer.cs">
+      <DependentUpon>DatePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Winforms\TestPageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\TestPageForm.Designer.cs">
+      <DependentUpon>TestPageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Winforms\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\DisplayInformation.xaml.cs">
+      <DependentUpon>DisplayInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GramStaining\GramsStaining_Data.cs" />
+    <Compile Include="DAL\Edit.cs" />
+    <Compile Include="Views\Winforms\EditRecordsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\EditRecordsPage.Designer.cs">
+      <DependentUpon>EditRecordsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LabClientInfo.cs" />
+    <Compile Include="Views\WPF\LabPage.xaml.cs">
+      <DependentUpon>LabPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\LabSearchClient.xaml.cs">
+      <DependentUpon>LabSearchClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Lab_PrintDoc.cs" />
+    <Compile Include="Views\WPF\MainForm.xaml.cs">
+      <DependentUpon>MainForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\MedicalCertificate\MedicalCertificate_Data.cs" />
+    <Compile Include="DAL\Neuro\NeuroClientInfo.cs" />
+    <Compile Include="DAL\Neuro\NeuroDB.cs" />
+    <Compile Include="Views\WPF\MainSerologyForm.xaml.cs">
+      <DependentUpon>MainSerologyForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\NeuroEditForm.xaml.cs">
+      <DependentUpon>NeuroEditForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\NeuroV1Page.xaml.cs">
+      <DependentUpon>NeuroV1Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\NeuroListForm.xaml.cs">
+      <DependentUpon>NeuroListForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Neuro\NeuroTemplates.cs" />
+    <Compile Include="Views\WPF\NeuroTemplatesPage.xaml.cs">
+      <DependentUpon>NeuroTemplatesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Neuro\Neuro_PrintDoc.cs" />
+    <Compile Include="Views\Winforms\NewClientPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\NewClientPage.Designer.cs">
+      <DependentUpon>NewClientPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Winforms\OldReqPartyPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\OldReqPartyPage.Designer.cs">
+      <DependentUpon>OldReqPartyPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\PasswordPage.xaml.cs">
+      <DependentUpon>PasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PE\PE_Data.cs" />
+    <Compile Include="DAL\PregnancyTest\PregnancyTest_Data.cs" />
+    <Compile Include="Views\Winforms\PrintReceiptPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\PrintReceiptPage.Designer.cs">
+      <DependentUpon>PrintReceiptPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Winforms\RadiologistPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\RadiologistPage.Designer.cs">
+      <DependentUpon>RadiologistPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Reg_PrintDoc.cs" />
+    <Compile Include="DAL\Serology\Serology_Data.cs" />
+    <Compile Include="DAL\Serology\Serology_PrintDoc.cs" />
+    <Compile Include="Views\Winforms\SetPricePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\SetPricePage.Designer.cs">
+      <DependentUpon>SetPricePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Winforms\SettingsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\SettingsPage.Designer.cs">
+      <DependentUpon>SettingsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\StandardHeader.cs" />
+    <Compile Include="DAL\Stool\StoolDB.cs" />
+    <Compile Include="DAL\Stool\Stool_Data.cs" />
+    <Compile Include="DAL\Stool\Stool_PrintDoc.cs" />
+    <Compile Include="DAL\TestKit.cs" />
+    <Compile Include="DAL\Test.cs" />
+    <Compile Include="Views\Winforms\TestPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Winforms\TestPage.Designer.cs">
+      <DependentUpon>TestPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\RequestingPartyReportForm.xaml.cs">
+      <DependentUpon>RequestingPartyReportForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\SerologyForm.xaml.cs">
+      <DependentUpon>SerologyForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_CultureAndSensitivity.xaml.cs">
+      <DependentUpon>UC_CultureAndSensitivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_HepC.xaml.cs">
+      <DependentUpon>UC_HepC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_PapSmear.xaml.cs">
+      <DependentUpon>UC_PapSmear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_Serology.xaml.cs">
+      <DependentUpon>UC_Serology.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_BloodTyping.xaml.cs">
+      <DependentUpon>UC_BloodTyping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_CBC.xaml.cs">
+      <DependentUpon>UC_CBC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_GramsStaining.xaml.cs">
+      <DependentUpon>UC_GramsStaining.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_MedicalCertificate.xaml.cs">
+      <DependentUpon>UC_MedicalCertificate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_PE.xaml.cs">
+      <DependentUpon>UC_PE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_PregTest.xaml.cs">
+      <DependentUpon>UC_PregTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_Serology1.xaml.cs">
+      <DependentUpon>UC_Serology1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_StoolExam.xaml.cs">
+      <DependentUpon>UC_StoolExam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\UC_Urinalysis.xaml.cs">
+      <DependentUpon>UC_Urinalysis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Urinalysis\Urinalysis_Data.cs" />
+    <Compile Include="DAL\Urinalysis\UrineDB.cs" />
+    <Compile Include="DAL\Urinalysis\Urine_PrintDoc.cs" />
+    <Compile Include="DAL\XRay\XRayClientInfo.cs" />
+    <Compile Include="DAL\XRay\XRayDB.cs" />
+    <Compile Include="Views\WPF\XRayPage.xaml.cs">
+      <DependentUpon>XRayPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPF\XRaySearchClient.xaml.cs">
+      <DependentUpon>XRaySearchClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\XRay\XRayTemplates.cs" />
+    <Compile Include="Views\WPF\XRayTemplatesPage.xaml.cs">
+      <DependentUpon>XRayTemplatesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\XRay\XRay_PrintDoc.cs" />
+    <Page Include="Views\WPF\CCFNoForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WPF\DateForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WPF\DrugTestSearchForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WPF\DrugTestSelectStatusForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WPF\LoginForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\NeuroTemplatesForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\NeuroV3Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WPF\NeuroV2Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\PasswordForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\PersonnelForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\PeStatusForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WPF\PhysicalExaminationSearchForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WPF\ReportFilters\rfXRay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\ReportForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\ResultForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\SearchBoxForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WPF\SearchClientForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_BloodChemistry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\CustomControls\ConnectionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\CustomControls\LoginControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\DisplayInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\LabPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\LabSearchClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\WPF\MainForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\MainSerologyForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\NeuroEditForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WPF\NeuroV1Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WPF\NeuroListForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\NeuroTemplatesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\PasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\RequestingPartyReportForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\SerologyForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_CultureAndSensitivity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_HepC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_PapSmear.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_Serology.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_BloodTyping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_CBC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_GramsStaining.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_MedicalCertificate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_PE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_PregTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_Serology1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_StoolExam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\UC_Urinalysis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\XRayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WPF\XRaySearchClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPF\XRayTemplatesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\MySqlDB.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Reports\BloodChemistryReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BloodChemistryReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XRaySummaryReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>XRaySummaryReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\CrystalReportForm.resx">
+      <DependentUpon>CrystalReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CultureAndSensitivityReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CultureAndSensitivityReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\NewRequestingPartyForm.resx">
+      <DependentUpon>NewRequestingPartyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\PasswordForm.resx">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\RequestingPartyListForm.resx">
+      <DependentUpon>RequestingPartyListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\ExamForm.resx">
+      <DependentUpon>ExamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\OfficePage.resx">
+      <DependentUpon>OfficePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\BetweenDatesPage.resx">
+      <DependentUpon>BetweenDatesPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\Camera_Form.resx">
+      <DependentUpon>Camera_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\ClientVerificationPage.resx">
+      <DependentUpon>ClientVerificationPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\Reg_PrintPreview.resx">
+      <DependentUpon>Reg_PrintPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\CyberPrintPreview.resx">
+      <DependentUpon>CyberPrintPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\DatePage.resx">
+      <DependentUpon>DatePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\EditRecordsPage.resx">
+      <DependentUpon>EditRecordsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\NewClientPage.resx">
+      <DependentUpon>NewClientPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\OldReqPartyPage.resx">
+      <DependentUpon>OldReqPartyPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\PrintReceiptPage.resx">
+      <DependentUpon>PrintReceiptPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\RadiologistPage.resx">
+      <DependentUpon>RadiologistPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\ReportPage.resx">
+      <DependentUpon>ReportPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\SalesStatusPage.resx">
+      <DependentUpon>SalesStatusPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\SetPricePage.resx">
+      <DependentUpon>SetPricePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\SettingsPage.resx">
+      <DependentUpon>SettingsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\TestPage.resx">
+      <DependentUpon>TestPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\TestPageForm.resx">
+      <DependentUpon>TestPageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Winforms\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="DAL\cmdldbDataSet.xsc">
+      <DependentUpon>cmdldbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\cmdldbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\cmdldbDataSet.xss">
+      <DependentUpon>cmdldbDataSet.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="Models\CyberModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CyberModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LogoTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LogoTransparent.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMDLWpf\CMDLWpf.csproj">
+      <Project>{35179602-21DA-4EE6-96BB-09D09713547A}</Project>
+      <Name>CMDLWpf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logo.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

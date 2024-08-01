@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="CMDLWpf.UC_BodyParts"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="337" Height="370">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" Content="Ears:"/>
+        <ComboBox Name="cbEars" Grid.Column="1" Grid.Row="0" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=Ears, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NORMAL" />
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="1" Content="Nose / Throat:"/>
+        <ComboBox Name="cbNoseThroat" Grid.Column="1" Grid.Row="1" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=NoseThroat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NORMAL" />
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="2" Content="Dentals:"/>
+        <ComboBox Name="cbDentals" Grid.Column="1" Grid.Row="2" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=Dental, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NORMAL" />
+            <ComboBoxItem Content="CARIES" />
+            <ComboBoxItem Content="UPPER PARTIAL DENTURE"/>
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="3" Content="Breast / Chest:"/>
+        <ComboBox Name="cbBreast" Grid.Column="1" Grid.Row="3" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=Breast, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+            <ComboBoxItem Content="NORMAL" />
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="4" Content="Extremities:"/>
+        <ComboBox Name="cbExtremities" Grid.Column="1" Grid.Row="4" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=Extremities, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NORMAL" />
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="5" Content="Neurolog:"/>
+        <ComboBox Name="cbNeurolog" Grid.Column="1" Grid.Row="5" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=Neurolog, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NORMAL" />
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="6" Content="Heart:"/>
+        <ComboBox Name="cbHeart" Grid.Column="1" Grid.Row="6" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=Heart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NORMAL" />
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="7" Content="Lungs:"/>
+        <ComboBox Name="cbLungs" Grid.Column="1" Grid.Row="7" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=Lungs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NORMAL" />
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="8" Content="Abdomen:"/>
+        <ComboBox Name="cbAbdomen" Grid.Column="1" Grid.Row="8" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=Abdomen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NORMAL" />
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="9" Content="Genitalia:"/>
+        <ComboBox Name="cbGenitalia" Grid.Column="1" Grid.Row="9" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=Genitalia, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NORMAL" />
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="10" Content="Ano-Rectal:"/>
+        <ComboBox Name="cbAnoRectal" Grid.Column="1" Grid.Row="10" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=Anorectal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NORMAL" />
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="11" Content="Skin:"/>
+        <ComboBox Name="cbSkin" Grid.Column="1" Grid.Row="11" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=Skin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NORMAL" />
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="12" Content="Others:"/>
+        <ComboBox Name="cbOthers" Grid.Column="1" Grid.Row="12" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=OtherBodyParts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NONE" />
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="13" Content="Medical History:"/>
+        <ComboBox Name="cbMedicalHistory" Grid.Column="1" Grid.Row="13" Margin="2" IsEditable="True" Background="LightYellow" Text="{Binding Path=PastMedicalHistory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="NONE" />
+        </ComboBox>
+    </Grid>
+</UserControl>

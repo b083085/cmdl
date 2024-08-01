@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="CMDL.WPF.UC_Serology1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="679" Height="349" Margin="0">
+    <Grid Margin="5">
+        <Viewbox Name="viewbox1" Stretch="Fill">
+            <StackPanel Height="339" Name="stackPanel1" Width="669" Orientation="Vertical">
+                <DataGrid Name="dgSerologyList" ItemsSource="{Binding Path=SeroDataList}" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" Height="194">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Test" Width="*" Binding="{Binding Path=Test}"/>
+                        <DataGridTemplateColumn Header="Results" Width="*">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <ComboBox Name="cbResults" Text="{Binding Path=Result,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                        <ComboBoxItem Content="REACTIVE"/>
+                                        <ComboBoxItem Content="NONREACTIVE"/>
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Test Kit" Width="*" Binding="{Binding Path=TestKit}"/>
+                        <DataGridTextColumn Header="Lot No" Width="*" Binding="{Binding Path=LotNo}" />
+                        <DataGridTextColumn Header="Expiry" Width="70" Binding="{Binding Path=Expiry}"/>
+                        <DataGridTemplateColumn Header="Remarks" Width="*">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Name="tbRemarks" Text="{Binding Path=Remarks,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <GroupBox BorderBrush="Green" FontFamily="Segoe UI" Foreground="Blue" Header="SIGNATORIES" Name="GBoxSignatories" Width="399" HorizontalAlignment="Left" Margin="0,0,0,5" FontWeight="Bold" IsEnabled="{Binding Enabled}">
+                    <StackPanel Name="stackPanel2" Width="379" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock Height="23" Name="textBlock1" Padding="5" Text="Pathologist" FontWeight="Normal" />
+                        <TextBlock FontWeight="Bold" Height="23" Name="TbPathologist" Padding="5" Text="{Binding Pathologist}" />
+                        <TextBlock Height="23" Name="textBlock2" Padding="5" Text="Medical Technologist 1" FontWeight="Normal" />
+                        <TextBlock FontWeight="Bold" Height="23" Name="TbMedTech_1" Padding="5" Text="{Binding Medtech}" />
+                    </StackPanel>
+                </GroupBox>
+                <StackPanel Height="23" Name="stackPanel5" Orientation="Horizontal" Width="205" HorizontalAlignment="Right">
+                    <Button Content="SAVE RECORD" FontFamily="Arial" FontWeight="Bold" Height="23" Margin="0,0,5,0" Name="BtSaveRecord" Width="100">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="LimeGreen" Offset="0.801" />
+                                <GradientStop Color="#FF61E561" Offset="0" />
+                                <GradientStop Color="LimeGreen" Offset="0.5" />
+                                <GradientStop Color="#FF67E665" Offset="0.45" />
+                                <GradientStop Color="#FF64E663" Offset="1" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="PREVIEW" FontFamily="Arial" FontWeight="Bold" Height="23" Name="BtPreview" Width="100">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="LimeGreen" Offset="0.801" />
+                                <GradientStop Color="#FF61E561" Offset="0" />
+                                <GradientStop Color="LimeGreen" Offset="0.5" />
+                                <GradientStop Color="#FF67E665" Offset="0.45" />
+                                <GradientStop Color="#FF64E663" Offset="1" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</UserControl>

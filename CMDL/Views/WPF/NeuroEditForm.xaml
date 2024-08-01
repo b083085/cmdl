@@ -1,0 +1,15 @@
+﻿<Window x:Class="CMDL.NeuroEditForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EDIT NEURO" 
+        Width="800"
+        Height="600"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal" 
+        Background="#fff" 
+        ResizeMode="CanResize" 
+        FontFamily="Arial"  
+        Icon="/CMDL;component/Images/Logo.png" 
+        ShowInTaskbar="True">
+    <ScrollViewer Name="scrollViewer" VerticalScrollBarVisibility="Auto"/>
+</Window>

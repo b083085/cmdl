@@ -1,0 +1,53 @@
+﻿<Window x:Class="CMDL.XRayTemplatesPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="600" Width="800" Icon="/CMDL;component/Images/Logo.png" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" Title="TEMPLATES">
+    <Grid>
+        <Viewbox Margin="12" Name="viewbox1" Stretch="Fill">
+            <DataGrid AutoGenerateColumns="False" Height="537" HorizontalGridLinesBrush="LightGray" ItemsSource="{Binding}" Name="dataGrid1" VerticalGridLinesBrush="LightGray" Width="754">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Exam" Binding="{Binding marker}" Width="*" FontWeight="Bold" IsReadOnly="True" />
+                    <DataGridTemplateColumn Header="Radiological Report" Width="*">
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate />
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding radio_report}" Foreground="Black" TextWrapping="WrapWithOverflow" Height="100" IsReadOnly="True"></TextBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Remarks" Width="*">
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate />
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding conclusion}" Foreground="Blue" TextWrapping="WrapWithOverflow" Height="100" IsReadOnly="True"></TextBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Import">
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate />
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="BtImport_Click" Content="IMPORT" Name="BtImport" Height="23">
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Gold" Offset="0.801" />
+                                            <GradientStop Color="#FFFCEE6E" Offset="0" />
+                                            <GradientStop Color="Gold" Offset="0.5" />
+                                            <GradientStop Color="#FFFCED70" Offset="0.447" />
+                                            <GradientStop Color="#FFFCEE6E" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Viewbox>
+    </Grid>
+</Window>

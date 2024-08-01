@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="CMDL.UC_MedicalCertificate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="679" Height="349" Background="White">
+    <Grid Margin="5">
+        <StackPanel Margin="0,0,0,-1" Name="stackPanel12" Orientation="Vertical">
+            <GroupBox Header="DATE APPROVED" Height="56" Name="GboxDateApproved" Width="448" Foreground="Blue" BorderBrush="Green" FontWeight="Bold">
+                <DatePicker Background="LightYellow" Foreground="Blue" Height="23" Name="DateApproved" Text="{Binding Date_approved, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="422" />
+            </GroupBox>
+            <GroupBox BorderBrush="Green" Foreground="Blue" Height="154" Name="GboxRemarks" Width="448" Header="REMARKS" FontWeight="Bold">
+                <TextBox Text="{Binding Remarks}" FontSize="12" FontWeight="Bold" Foreground="Blue" Height="118" Name="TbRemarks" TextAlignment="Justify" TextWrapping="WrapWithOverflow" Width="433" Background="LightYellow" />
+            </GroupBox>
+            <GroupBox BorderBrush="Green" Foreground="Blue" Header="PHYSICIAN" Height="51" Name="GboxPhysician" Width="448" FontWeight="Bold">
+                <ComboBox Text="{Binding Physician}" Height="23" IsEditable="True" IsReadOnly="True" Name="CbPhysician" Width="433" Background="LightYellow" Foreground="Blue">
+                    <ComboBoxItem Content="PILAR M. LACEDA M.D. FPAFP" />
+                </ComboBox>
+            </GroupBox>
+            <GroupBox BorderBrush="Green" Foreground="Blue" Header="LICENSE NUMBER" Height="51" Name="GboxLicenseNo" Width="448" FontWeight="Bold" Margin="0,0,0,5">
+                <TextBox Height="23" Name="TbLicenseNumber" Width="433" Background="LightYellow" Foreground="Blue" Text="{Binding License_No}" />
+            </GroupBox>
+            <StackPanel Height="23" Name="stackPanel5" Orientation="Horizontal" Width="205" HorizontalAlignment="Right">
+                <Button Content="SAVE RECORD" FontFamily="Arial" FontWeight="Bold" Height="23" Margin="0,0,5,0" Name="BtSaveRecord" Width="100">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="LimeGreen" Offset="0.801" />
+                            <GradientStop Color="#FF61E561" Offset="0" />
+                            <GradientStop Color="LimeGreen" Offset="0.5" />
+                            <GradientStop Color="#FF67E665" Offset="0.45" />
+                            <GradientStop Color="#FF64E663" Offset="1" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button Content="PREVIEW" FontFamily="Arial" FontWeight="Bold" Height="23" Name="BtPreview" Width="100">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="LimeGreen" Offset="0.801" />
+                            <GradientStop Color="#FF61E561" Offset="0" />
+                            <GradientStop Color="LimeGreen" Offset="0.5" />
+                            <GradientStop Color="#FF67E665" Offset="0.45" />
+                            <GradientStop Color="#FF64E663" Offset="1" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

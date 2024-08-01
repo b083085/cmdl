@@ -1,0 +1,75 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CMDL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Server" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="UserID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">root</Value>
+    </Setting>
+    <Setting Name="Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3306</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Cyber001</Value>
+    </Setting>
+    <Setting Name="Ck_Reg" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Ck_XRay" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Ck_Neuro" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Ck_Lab" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Company" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CYBER MEDICAL AND DIAGNOSTIC LABORATORY</Value>
+    </Setting>
+    <Setting Name="Company_Profile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DOH-PNP-LTO ACCREDITED DRUG TEST CENTER</Value>
+    </Setting>
+    <Setting Name="Company_Addr" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2nd Floor La Nora Bldg. N. Bacalso Avenue, Cebu City</Value>
+    </Setting>
+    <Setting Name="Company_TelNo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Tel. No(s): (032) 253 - 6923 / (032) 256 - 2957</Value>
+    </Setting>
+    <Setting Name="RadioReport" Type="System.String" Scope="User">
+      <Value Profile="(Default)">The lung fields are clear. The heart is normal in size, shape and position. The pulmonary vessels are within normal limits. Both hemidiaphragm are sharp and distinct. The trachea lies in the midline. The aorta is not remarkable. The osseous thoracic cage reveals no significant bony abnormality.
+</Value>
+    </Setting>
+    <Setting Name="XRayRemarks" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NEGATIVE CHEST</Value>
+    </Setting>
+    <Setting Name="Database" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cmdldb</Value>
+    </Setting>
+    <Setting Name="Ck_Update" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Ck_Settings" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Ck_Reports" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Ck_About" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="cmdldbConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=localhost;User Id=root;password=Cyber001;database=cmdldb&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=localhost;User Id=root;password=Cyber001;database=cmdldb</Value>
+    </Setting>
+    <Setting Name="EFConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

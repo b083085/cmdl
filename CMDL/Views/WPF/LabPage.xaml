@@ -1,0 +1,48 @@
+﻿<Window x:Class="CMDL.LabPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LABORATORY" Height="600" Width="800" WindowStartupLocation="CenterScreen" WindowState="Normal" Background="WhiteSmoke" Icon="/CMDL;component/Images/Logo.png" ShowInTaskbar="True">
+    <Grid>
+        <Viewbox Margin="12,12,13,12" Name="viewbox1" Stretch="Fill">
+            <StackPanel Height="537" Name="stackPanel11" Width="753">
+                <StackPanel Height="168" HorizontalAlignment="Left" Name="stackPanel10" Orientation="Horizontal" Width="753" Margin="0,0,0,10">
+                    <StackPanel Height="168" Name="stackPanel5" Orientation="Horizontal" VerticalAlignment="Top" Width="600">
+                        <StackPanel Height="168" Name="stackPanel3" VerticalAlignment="Top" Width="100">
+                            <Label Content="Control No:" Height="28" Name="label2" FontFamily="Arial" FontWeight="Normal" FontSize="14" />
+                            <Label Content="Date:" Height="28" Name="label3" FontFamily="Arial" FontWeight="Normal" FontSize="14" />
+                            <Label Content="Name:" Height="28" Name="label4" FontFamily="Arial" FontWeight="Normal" FontSize="14" />
+                            <Label Content="Age:" Height="28" Name="label5" FontFamily="Arial" FontWeight="Normal" FontSize="14" />
+                            <Label Content="Sex:" Height="28" Name="label6" FontFamily="Arial" FontWeight="Normal" FontSize="14" />
+                        </StackPanel>
+                        <StackPanel Height="168" VerticalAlignment="Top" Width="500" Name="SPanelInfo">
+                            <Label FontWeight="Bold" Height="28" Name="LbControlNo" FontFamily="Arial" FontSize="14" Foreground="Red" Content="{Binding ControlNo}" />
+                            <Label FontWeight="Bold" Height="28" Name="LbDate" FontFamily="Arial" FontSize="14" Content="{Binding TimeIn}" />
+                            <Label FontWeight="Bold" Height="28" Name="LbName" FontFamily="Arial" FontSize="14" Content="{Binding FullName}"/>
+                            <Label FontWeight="Bold" Height="28" Name="LbAge" FontFamily="Arial" FontSize="14" Content="{Binding Age}" />
+                            <Label FontWeight="Bold" Height="28" Name="LbSex" FontFamily="Arial" FontSize="14" Content="{Binding Sex}" />
+                        </StackPanel>
+                    </StackPanel>
+                    <Border BorderThickness="5" CornerRadius="10" Height="166" Name="border1" Width="150">
+                        <Border.BitmapEffect>
+                            <DropShadowBitmapEffect />
+                        </Border.BitmapEffect>
+                        <Border.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="LimeGreen" Offset="1" />
+                                <GradientStop Color="#FF61E561" Offset="0" />
+                                <GradientStop Color="LimeGreen" Offset="0.5" />
+                                <GradientStop Color="#FF67E665" Offset="0.45" />
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <Image Height="156" Name="Photo" Stretch="Fill" Width="140" ClipToBounds="True" Source="{Binding Photo}">
+                            <Image.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,140,156"/>
+                            </Image.Clip>
+                        </Image>
+                    </Border>
+                </StackPanel>
+                <TabControl Height="359" Name="tabControl1" Width="753" TabStripPlacement="Left"></TabControl>
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</Window>

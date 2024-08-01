@@ -1,0 +1,77 @@
+﻿<Window x:Class="CMDL.MainForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CYBER MEDICAL &amp; DIAGNOSTIC LABORATORY" 
+        Height="600" 
+        Width="800" 
+        Icon="/CMDL;component/Images/Logo.png"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
+    <Window.Resources>
+        <Style TargetType="{x:Type MenuItem}">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Menu Name="myMenu">
+            <Menu.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2EA42E" Offset="1" />
+                    <GradientStop Color="LightGreen" Offset="0" />
+                </LinearGradientBrush>
+            </Menu.Background>
+            <MenuItem Header="Registration">
+                <MenuItem Header="New Client" Name="NewClientMenu"/>
+                <MenuItem Header="Client Verification" Name="ClientVerificationMenu" />
+                <MenuItem Header="Display Client Info" Name="DisplayClientInfoMenu" />
+                <MenuItem Header="Update Client Records" Name="UpdateClientRecordsMenu" />
+                <MenuItem Header="Print Stub" Name="PrintStubMenu" />
+                <MenuItem Header="Gross Sales" Name="GrossSalesMenu" />
+            </MenuItem>
+            <MenuItem Header="X-Ray" Name="XRayMenu"/>
+            <MenuItem Header="Neuro" Name="NeuroMenu"/>
+            <MenuItem Header="Laboratory" Name="LaboratoryMenu"/>
+            <MenuItem Header="Reports" Name="ReportsMenu">
+                <MenuItem Header="Sales" IsEnabled="False" Name="salesHeaderReportMenu"/>
+                <MenuItem Header="Sales Summary" Name="salesSummaryMenu"/>
+                <MenuItem Header="X-Ray" IsEnabled="False" Name="xrayHeaderReportMenu"/>
+                <MenuItem Header="X-Ray Summary" Name="xraySummaryMenu"/>
+                <Separator Name="neuroReportSeparatorMenu"/>
+                <MenuItem Header="Neuro" IsEnabled="False" Name="neuroHeaderReportMenu"/>
+                <MenuItem Header="Psychological Test Summary" Name="psychologicalTestSummaryMenu"/>
+                <Separator Name="laboratoryReportSeparatorMenu"/>
+                <MenuItem Header="Laboratory" IsEnabled="False" Name="laboratoryHeaderReportMenu"/>
+                <MenuItem Header="Blood Test" Name="bloodTestReportMenu"/>
+                <MenuItem Header="Blood Typing" Name="bloodTypingReportMenu"/>
+                <MenuItem Header="CBC" Name="cbcReportMenu"/>
+                <MenuItem Header="Hep A" Name="HepAReportMenu"/>
+                <MenuItem Header="Hep B" Name="HepBReportMenu"/>
+                <MenuItem Header="Hep C" Name="HepCReportMenu"/>
+                <MenuItem Header="HIV" Name="HIVReportMenu"/>
+                <MenuItem Header="Pregnancy Test" Name="pregnancyTestReportMenu"/>
+                <MenuItem Header="Stool" Name="stoolReportMenu"/>
+                <MenuItem Header="Urinalysis" Name="urinalysisReportMenu"/>
+                <Separator Name="physicalReportSeparatorMenu"/>
+                <MenuItem Header="Physical" IsEnabled="False" Name="physicalReportHeaderMenu"/>
+                <MenuItem Header="Medical Certificate" Name="medicalCertificateReportMenu"/>
+                <MenuItem Header="PE" Name="peReportMenu"/>
+            </MenuItem>
+        </Menu>
+
+        <ContentControl x:Name="contentControl1" Grid.Row="1"/>
+
+        
+        <StatusBar Grid.Row="2">
+            <StatusBarItem Content="User: "/>
+            <StatusBarItem Name="sbUserName" FontWeight="Bold"/>
+        </StatusBar>
+    </Grid>
+</Window>

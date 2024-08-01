@@ -1,0 +1,85 @@
+﻿<Window x:Class="CMDL.Views.WPF.NeuroTemplatesForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="NEURO TEMPLATES" 
+        Height="450" 
+        Width="800" 
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Gender"/>
+            <ComboBox Name="cbGender" 
+                      Grid.Column="1" 
+                      Margin="0,0,5,0"/>
+            <Label Grid.Column="2" Content="Remarks"/>
+            <TextBox Name="tbRemarks" 
+                     Grid.Column="3"
+                     Margin="0,0,5,0"
+                     Background="LightYellow"/>
+            <Button Name="btnSearch"
+                    Grid.Column="5" 
+                    Content="SEARCH"
+                    Background="{StaticResource btnBackgroundStyle}"
+                    Foreground="#fff"
+                    Width="100"/>
+        </Grid>
+        <DataGrid Grid.Row="1" 
+                  Name="dgRemarks"
+                  VerticalGridLinesBrush="LightGray"
+                  HorizontalGridLinesBrush="LightGray"
+                  HeadersVisibility="None"
+                  Margin="0,10,0,0" 
+                  ItemsSource="{Binding Path=Remarks}" 
+                  AutoGenerateColumns="False" 
+                  CanUserAddRows="False" 
+                  CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Remarks}" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+                            <Setter Property="Padding" Value="5"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.EditingElementStyle>
+                        <Style TargetType="{x:Type TextBox}">
+                            <!--<Setter Property="IsReadOnly" Value="True"/>-->
+                            <Setter Property="Padding" Value="5"/>
+                            <Setter Property="TextWrapping" Value="Wrap"/>
+                        </Style>
+                    </DataGridTextColumn.EditingElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Hyperlink Name="hpCopyToRemarks" Click="HpCopyToRemarks_Click">
+                                    <Hyperlink.Style>
+                                        <Style TargetType="{x:Type Hyperlink}">
+                                            <Setter Property="TextDecorations" Value="{x:Null}"/>
+                                        </Style>
+                                    </Hyperlink.Style>
+                                    Copy to Remarks
+                                </Hyperlink>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

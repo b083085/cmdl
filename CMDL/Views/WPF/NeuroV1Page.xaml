@@ -1,0 +1,432 @@
+﻿<UserControl x:Class="CMDL.NeuroV1Page"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:conv="clr-namespace:CMDL.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" 
+             d:DesignWidth="300" 
+             Background="#fff"
+             Width="700" 
+             Height="1500">
+    <UserControl.Resources>
+        <conv:ReadOnlyConverter x:Key="readOnlyConverter"/>
+        <conv:ReadOnlyVisibilityConverter x:Key="readOnlyVisibilityConverter"/>
+        <conv:NegateReadOnlyVisibilityConverter x:Key="negateReadOnlyVisibilityConverter"/>
+        <conv:SaveRecordContentConverter x:Key="saveRecordContentConverter"/>
+    </UserControl.Resources>
+    <Grid Margin="20" DataContext="{Binding Path=Neuro}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="170"/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Control No" FontWeight="Bold" />
+                <Label Content="Date" FontWeight="Bold" Grid.Row="1"/>
+                <Label Content="Name" FontWeight="Bold" Grid.Row="2"/>
+                <Label Content="Age" FontWeight="Bold"  Grid.Row="3"/>
+                <Label Content="Gender" FontWeight="Bold" Grid.Row="4"/>
+                <Label Content="Home Address" FontWeight="Bold" Grid.Row="5"/>
+                <Label Content="Purpose" FontWeight="Bold" Grid.Row="6"/>
+                <Label Content="Referring Agency" FontWeight="Bold" Grid.Row="7"/>
+                <Label Content="Religion" FontWeight="Bold" Grid.Row="8"/>
+                <Label Content="Occupation" FontWeight="Bold" Grid.Row="9"/>
+                <Label Content="Place of Work" FontWeight="Bold" Grid.Row="10"/>
+                <Label Content="Educ. Attainment" FontWeight="Bold" Grid.Row="11"/>
+
+                <Label Content=":" Grid.Column="1"/>
+                <Label Content=":" Grid.Column="1" Grid.Row="1"/>
+                <Label Content=":" Grid.Column="1" Grid.Row="2"/>
+                <Label Content=":" Grid.Column="1"  Grid.Row="3"/>
+                <Label Content=":" Grid.Column="1" Grid.Row="4"/>
+                <Label Content=":" Grid.Column="1" Grid.Row="5"/>
+                <Label Content=":" Grid.Column="1" Grid.Row="6"/>
+                <Label Content=":" Grid.Column="1" Grid.Row="7"/>
+                <Label Content=":" Grid.Column="1" Grid.Row="8"/>
+                <Label Content=":" Grid.Column="1" Grid.Row="9"/>
+                <Label Content=":" Grid.Column="1" Grid.Row="10"/>
+                <Label Content=":" Grid.Column="1"  Grid.Row="11"/>
+
+                <Label Content="{Binding Client.ControlNo}" Grid.Column="2" Foreground="Red"/>
+                <Label Content="{Binding Client.TimeIn}" Grid.Column="2" Grid.Row="1"/>
+                <Label Content="{Binding Client.FullName}" Grid.Column="2" Grid.Row="2"/>
+                <Label Content="{Binding Client.Age}" Grid.Column="2" Grid.Row="3"/>
+                <Label Content="{Binding Client.Gender}" Grid.Column="2" Grid.Row="4"/>
+                <Label Content="{Binding Client.HomeAddress}" Grid.Column="2" Grid.Row="5"/>
+                <Label Content="{Binding Client.Purpose}" Grid.Column="2" Grid.Row="6"/>
+                <Label Content="{Binding Client.RequestingParty}" Grid.Column="2" Grid.Row="7"/>
+
+                <Label Grid.Column="2" Grid.Row="8" Content="{Binding Path=Religion}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyVisibilityConverter}}"/>
+                <Label Grid.Column="2" Grid.Row="9" Content="{Binding Path=Occupation}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyVisibilityConverter}}"/>
+                <Label Grid.Column="2" Grid.Row="10" Content="{Binding Path=PlaceOfWork}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyVisibilityConverter}}"/>
+                <Label Grid.Column="2" Grid.Row="11" Content="{Binding Path=Education}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyVisibilityConverter}}"/>
+
+                <TextBox Grid.Column="2" Grid.Row="8" CharacterCasing="Upper" Margin="0,2,0,2" Background="LightYellow" Text="{Binding Religion,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource negateReadOnlyVisibilityConverter}}" IsReadOnly="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Column="2" Grid.Row="9" CharacterCasing="Upper" Margin="0,2,0,2" Background="LightYellow" Text="{Binding Occupation,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource negateReadOnlyVisibilityConverter}}" IsReadOnly="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox Grid.Column="2" Grid.Row="10" CharacterCasing="Upper" Margin="0,2,0,2" Background="LightYellow" Text="{Binding PlaceOfWork,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource negateReadOnlyVisibilityConverter}}" IsReadOnly="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox Grid.Column="2" Grid.Row="11" CharacterCasing="Upper" Margin="0,2,0,2" Background="LightYellow" Text="{Binding Education,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource negateReadOnlyVisibilityConverter}}" IsReadOnly="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+            <Border Grid.Column="1" 
+                    BorderThickness="5" 
+                    CornerRadius="10" 
+                    Height="150"
+                    Width="150"
+                    VerticalAlignment="Top">
+                <Border.BitmapEffect>
+                    <DropShadowBitmapEffect />
+                </Border.BitmapEffect>
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF47A3FA" Offset="0" />
+                        <GradientStop Color="DodgerBlue" Offset="1" />
+                        <GradientStop Color="DodgerBlue" Offset="0.5" />
+                        <GradientStop Color="#FF5AACF9" Offset="0.418" />
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Image Height="140" 
+                       Width="140" 
+                       Source="{Binding Client.Photo}"/>
+            </Border>
+        </Grid>
+        <Label Grid.Row="1"
+               Margin="0,10,0,0"
+               FontSize="15"
+               FontWeight="Bold" 
+               HorizontalContentAlignment="Center"
+               Foreground="#fff" 
+               Content="NEURO PSYCHOLOGICAL TEST REPORT"
+               Background="{StaticResource btnBackgroundStyle}"/>
+        <Grid Grid.Row="2" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="FACTORS" FontWeight="Bold"/>
+            <Label Content="1" Grid.Column="1" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+            <Label Content="2" Grid.Column="2" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+            <Label Content="3" Grid.Column="3" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+            <Label Content="4" Grid.Column="4" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+            <Label Content="5" Grid.Column="5" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+
+            <Label Content="A. INTELLIGENCE" Grid.Row="1" FontWeight="Bold"/>
+            <RadioButton Name="A1" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="A" />
+            <RadioButton Name="A2" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="A" />
+            <RadioButton Name="A3" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="A" />
+            <RadioButton Name="A4" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="A" />
+            <RadioButton Name="A5" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="A" />
+
+            <Label Content="B. EMOTIONAL STABILITY"  Grid.Row="2" FontWeight="Bold"/>
+            <Label Content="1. Coping with Stress" Grid.Row="3"/>
+            <RadioButton Name="B1_1" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="B1" />
+            <RadioButton Name="B1_2" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="B1" />
+            <RadioButton Name="B1_3" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="B1" />
+            <RadioButton Name="B1_4" Grid.Column="4" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="B1" />
+            <RadioButton Name="B1_5" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="B1" />
+
+            <Label Content="2. Control of aggressive / hostile impulses" Grid.Row="4"/>
+            <RadioButton Name="B2_1" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="B2" />
+            <RadioButton Name="B2_2" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="B2" />
+            <RadioButton Name="B2_3" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="B2" />
+            <RadioButton Name="B2_4" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="B2" />
+            <RadioButton Name="B2_5" Grid.Column="5" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" GroupName="B2" />
+
+            <Label Content="C. SOCIAL ADAPTABILITY" Grid.Row="5" FontWeight="Bold"/>
+            <Label Content="1. With people in general"  Grid.Row="6"/>
+            <RadioButton Name="C1_1" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C1" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="C1_2" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C1" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="C1_3" Grid.Column="3" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C1" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="C1_4" Grid.Column="4" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C1" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="C1_5" Grid.Column="5" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C1" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+
+            <Label Content="2. With peers"  Grid.Row="7"/>
+            <RadioButton Name="C2_1" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C2" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+            <RadioButton Name="C2_2" Grid.Column="2" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C2" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+            <RadioButton Name="C2_3" Grid.Column="3" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C2" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+            <RadioButton Name="C2_4" Grid.Column="4" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C2" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+            <RadioButton Name="C2_5" Grid.Column="5" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C2" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+
+            <Label Content="3. With superior" Grid.Row="8"/>
+            <RadioButton Name="C3_1" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C3" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+            <RadioButton Name="C3_2" Grid.Column="2" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C3" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="C3_3" Grid.Column="3" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C3" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="C3_4" Grid.Column="4" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C3" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="C3_5" Grid.Column="5" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C3" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+
+            <Label Content="4. With subordinates" Grid.Row="9"/>
+            <RadioButton Name="C4_1" Grid.Column="1" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C4" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="C4_2" Grid.Column="2" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C4" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="C4_3" Grid.Column="3" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C4" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="C4_4" Grid.Column="4" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C4" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="C4_5" Grid.Column="5" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="C4" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+
+            <Label Content="D. WORK ATTITUDES" Grid.Row="10" FontWeight="Bold"/>
+            <Label Content="1. Responsibility/ Dependability" Grid.Row="11"/>
+            <RadioButton Name="D1_1" Grid.Column="1" Grid.Row="11" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D1" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D1_2" Grid.Column="2" Grid.Row="11" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D1" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D1_3" Grid.Column="3" Grid.Row="11" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D1" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D1_4" Grid.Column="4" Grid.Row="11" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D1" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D1_5" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D1" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+
+            <Label Content="2. Loyalty" Grid.Row="12"/>
+            <RadioButton Name="D2_1" Grid.Column="1" Grid.Row="12" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D2" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+            <RadioButton Name="D2_2" Grid.Column="2" Grid.Row="12" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D2" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D2_3" Grid.Column="3" Grid.Row="12" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D2" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D2_4" Grid.Column="4" Grid.Row="12" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D2" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D2_5" Grid.Column="5" Grid.Row="12" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D2" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+
+            <Label Content="3. Perseverance" Grid.Row="13"/>
+            <RadioButton Name="D3_1" Grid.Column="1" Grid.Row="13" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D3" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D3_2" Grid.Column="2" Grid.Row="13" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D3" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D3_3" Grid.Column="3" Grid.Row="13" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D3" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D3_4" Grid.Column="4" Grid.Row="13" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D3" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D3_5" Grid.Column="5" Grid.Row="13" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D3" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+
+            <Label Content="4. Flexibility" Grid.Row="14"/>
+            <RadioButton Name="D4_1" Grid.Column="1" Grid.Row="14" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D4" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D4_2" Grid.Column="2" Grid.Row="14" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D4" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D4_3" Grid.Column="3" Grid.Row="14" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D4" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D4_4" Grid.Column="4" Grid.Row="14" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D4" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            <RadioButton Name="D4_5" Grid.Column="5" Grid.Row="14" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="D4" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+
+            <Label Content="E. RELATED FACTORS" Grid.Row="15" FontWeight="Bold"/>
+            <Label Content="a. Job Experience" Grid.Row="16"/>
+            <Label Content="{Binding Path=JobExperience}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyVisibilityConverter}}" Grid.Column="1" Grid.Row="16" Grid.ColumnSpan="5"/>
+            <TextBox CharacterCasing="Upper" Text="{Binding Path=JobExperience,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource negateReadOnlyVisibilityConverter}}" IsReadOnly="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Background="LightYellow" Margin="0,2,0,2" Grid.Column="1" Grid.Row="16" Grid.ColumnSpan="5"/>
+            <Label Content="b. Eligibility" Grid.Row="17"/>
+            <Label Content="{Binding Path=Eligibility}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyVisibilityConverter}}" Grid.Column="1" Grid.Row="17" Grid.ColumnSpan="5"/>
+            <TextBox CharacterCasing="Upper" Text="{Binding Path=Eligibility,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource negateReadOnlyVisibilityConverter}}" IsReadOnly="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Background="LightYellow" Margin="0,2,0,2" Grid.Column="1" Grid.Row="17" Grid.ColumnSpan="5"/>
+
+            <Grid Grid.ColumnSpan="6" Grid.Row="18" Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="MENTAL STATUS EXAMINATION" FontWeight="Bold"/>
+                <Label Content="A(Normal)" Grid.Column="1" FontWeight="Bold"/>
+                <Label Content="B(Problem)" Grid.Column="2" FontWeight="Bold"/>
+                <Label Content="C(Problem)" Grid.Column="3" FontWeight="Bold"/>
+
+                <Label Content="General Appearance" Grid.Row="1" FontWeight="Bold"/>
+                <RadioButton Name="rbWellGroomed" GroupName="GenApp" Content="well groomed" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbUnkept" GroupName="GenApp" Content="unkept"  Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbVeryPoor" GroupName="GenApp" Content="very poor"  Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+
+                <Label Content="Attitude" Grid.Row="2" FontWeight="Bold"/>
+                <RadioButton Name="rbCooperative" GroupName="Attitude" Content="cooperative"  Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbUncooperative" GroupName="Attitude" Content="uncooperative"  Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbVeryAngry" GroupName="Attitude" Content="very angry"  Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+
+                <Label Content="Memory" Grid.Row="3" FontWeight="Bold"/>
+                <RadioButton Name="rbMemoryNormal" GroupName="Memory" Content="normal" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbMemorySlowed" GroupName="Memory" Content="slowed" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbDifficult" GroupName="Memory" Content="difficult" Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+
+                <Label Content="Speech" Grid.Row="4" FontWeight="Bold"/>
+                <RadioButton Name="rbFluent" GroupName="Speech" Content="fluent" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbSpeechSlowed" GroupName="Speech" Content="slowed" Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbBroken" GroupName="Speech" Content="broken" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+
+                <Label Content="Affect And Mood" Grid.Row="5" FontWeight="Bold"/>
+                <RadioButton Name="rbAffectAndMoodNormal" GroupName="AffectAndMood" Content="normal" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+                <RadioButton Name="rbSad" Content="sad" GroupName="AffectAndMood" Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+                <RadioButton Name="rbManic" GroupName="AffectAndMood" Content="manic" Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+
+                <Label Content="Thought Content" Grid.Row="6" FontWeight="Bold"/>
+                <RadioButton Name="rbSpontaneous" GroupName="ThoughtContent" Content="spontaneous" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbIllogical" GroupName="ThoughtContent" Content="illogical" Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbFlightOfIdeas" GroupName="ThoughtContent" Content="flight of ideas" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+
+                <Label Content="Suicidality" Grid.Row="7" FontWeight="Bold"/>
+                <RadioButton Name="rbNoPattern" GroupName="Suicidality" Content="no pattern" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbThreats" GroupName="Suicidality" Content="threats" Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbPlanAttempt" GroupName="Suicidality" Content="plan/attempt" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+
+                <Label Content="Preoccupations" Grid.Row="8" FontWeight="Bold"/>
+                <RadioButton Name="rbPreoccupationNone" GroupName="Preoccupations" Content="none" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbAntiSocial" GroupName="Preoccupations" Content="antisocial" Grid.Column="2" Grid.Row="8" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+                <RadioButton Name="rbObsessions" GroupName="Preoccupations" Content="obsessions" Grid.Column="3" Grid.Row="8" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+
+                <Label Content="Cognition/Thinking" Grid.Row="9" FontWeight="Bold"/>
+                <RadioButton Name="rbOrientation" GroupName="Cognition" Content="orientation" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+                <RadioButton Name="rbIncomplete" GroupName="Cognition" Content="incomplete" Grid.Column="2" Grid.Row="9" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+                <RadioButton Name="rbDisorganized" GroupName="Cognition" Content="disorganized" Grid.Column="3" Grid.Row="9" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+
+                <Label Content="Halucination/Delusions" Grid.Row="10" FontWeight="Bold"/>
+                <RadioButton Name="rbHalucinationNone" GroupName="Halucination" Content="none" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+                <RadioButton Name="rbVoice" GroupName="Halucination" Content="voice/visions" Grid.Column="2" Grid.Row="10" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+                <RadioButton Name="rbPersecutions" GroupName="Halucination" Content="persecutions" Grid.Column="3" Grid.Row="10" VerticalAlignment="Center" IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3" Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <DockPanel>
+                <Label Content="REMARKS:" FontWeight="Bold" DockPanel.Dock="Left"/>
+                <Button Content="TEMPLATES" 
+                        Name="btnTemplates"
+                        Foreground="#fff" 
+                        Width="100"
+                        Margin="2"
+                        DockPanel.Dock="Right" 
+                        HorizontalAlignment="Right" 
+                        Background="{StaticResource btnBackgroundStyle}"
+                        Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource negateReadOnlyVisibilityConverter}}"
+                        IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+
+            </DockPanel>
+            <TextBlock Text="{Binding Path=Remarks}" 
+                       TextWrapping="Wrap"
+                       Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyVisibilityConverter}}" 
+                       Grid.Row="1"/>
+            <TextBox Grid.Row="1"
+                         AcceptsReturn="True" 
+                         Background="LightYellow" 
+                         Height="185" 
+                         SpellCheck.IsEnabled="True" 
+                         TextWrapping="Wrap" 
+                         Text="{Binding Remarks,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource negateReadOnlyVisibilityConverter}}"
+                         IsReadOnly="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <Grid Grid.Row="4" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="RECOMMENDATION" FontWeight="Bold" />
+            <Label Content=":" FontWeight="Bold" Grid.Column="1"/>
+            <Label Grid.Column="2" Content="{Binding Path=Recommendation}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyVisibilityConverter}}"/>
+            <ComboBox Name="cbRecommendation" 
+                      Grid.Column="2" 
+                      Margin="0,2,0,2" 
+                      Text="{Binding Recommendation,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                      Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource negateReadOnlyVisibilityConverter}}" 
+                      IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}"/>
+
+            <Label FontWeight="Bold" Content="PSYCHOMETRICIAN" Grid.Row="1" />
+            <Label FontWeight="Bold" Content=":" Grid.Column="1" Grid.Row="1" />
+            <Label Grid.Column="2" Grid.Row="1" Content="{Binding Path=Psychometrician}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyVisibilityConverter}}"/>
+            <ComboBox Name="cbPsychometrician" 
+                      Grid.Column="2" 
+                      Margin="0,2,0,2" 
+                      Grid.Row="1" 
+                      DisplayMemberPath="Name"
+                      Text="{Binding Psychometrician,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                      Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource negateReadOnlyVisibilityConverter}}" 
+                      IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+
+            <Label FontWeight="Bold" Content="PSYCHOLOGIST" Grid.Row="2"/>
+            <Label FontWeight="Bold" Content=":" Grid.Column="1" Grid.Row="2" />
+            <Label Grid.Column="2" Grid.Row="2" Content="{Binding Path=Psychologist}" Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyVisibilityConverter}}"/>
+            <ComboBox Name="cbPsychologist" 
+                      Grid.Column="2"
+                      Grid.Row="2" 
+                      Margin="0,2,0,2"
+                      DisplayMemberPath="Name"
+                      Text="{Binding Psychologist,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                      Visibility="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource negateReadOnlyVisibilityConverter}}"
+                      IsEnabled="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource readOnlyConverter}}" />
+
+            <Grid Grid.Column="2" Grid.Row="3" Margin="0,50,0,0" HorizontalAlignment="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="{Binding Path=IsReadOnly,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource saveRecordContentConverter}}" 
+                        Name="btnSaveRecord"
+                        Foreground="#fff" 
+                        Width="100" 
+                        Grid.Column="1"
+                        Margin="2"
+                        Background="{StaticResource btnBackgroundStyle}"/>
+                <Button Content="PREVIEW" 
+                        Name="btnPreview"
+                        Foreground="#fff" 
+                        Width="100" 
+                        Grid.Column="2" 
+                        Margin="2"
+                        Background="{StaticResource btnBackgroundStyle}"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="CMDLWpf.UC_XRay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Height="399" Width="768">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Label Content="Film No: "/>
+            <TextBox Width="200" VerticalAlignment="Center" Background="LightYellow" Name="tbFilmNo" Text="{Binding FilmNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Content="TEMPLATES" Width="100" Margin="400,0,0,0" Name="btTemplates"/>
+        </StackPanel>
+        <GroupBox Grid.Row="1" Margin="3">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <Label Content="RADIOGRAPHIC REPORT" FontWeight="Bold"/>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <TextBox Background="LightYellow" SpellCheck.IsEnabled="True" Name="tbRadiographicReport" Text="{Binding RadioReport, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" TextWrapping="WrapWithOverflow">
+                
+            </TextBox>
+        </GroupBox>
+        <GroupBox Grid.Row="2" Margin="3">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <Label Content="REMARKS" FontWeight="Bold"/>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <TextBox Background="LightYellow" CharacterCasing="Upper" FontWeight="Bold" SpellCheck.IsEnabled="True" Name="tbRemarks" Text="{Binding Remarks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" TextWrapping="WrapWithOverflow">
+                
+            </TextBox>
+        </GroupBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <Label Content="Radiologist: "/>
+            <ComboBox Width="250" VerticalAlignment="Center" Margin="0,0,100,0" Name="cbRadiologist" Text="{Binding Radiologist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Prepared By: "/>
+            <ComboBox Width="250" VerticalAlignment="Center" Name="cbPreparedBy" Text="{Binding PreparedBy, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

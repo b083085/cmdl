@@ -1,0 +1,162 @@
+﻿<UserControl x:Class="CMDL.UC_Serology"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="679" Height="349" Margin="0">
+    <Grid Margin="5">
+        <Viewbox Name="viewbox1" Stretch="Fill">
+            <StackPanel Height="339" Name="stackPanel1" Width="669" Orientation="Vertical">
+                <StackPanel Height="140" Name="stackPanel3" Width="669" Orientation="Horizontal">
+                    <StackPanel Height="140" Name="stackPanel4" Width="111.5">
+                        <TextBlock Height="23" Name="textBlock4" Text="Test" TextAlignment="Center" Foreground="Blue" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFD6D6D6" Offset="1" />
+                                    <GradientStop Color="#FFF0F0F0" Offset="0" />
+                                    <GradientStop Color="#FFD6D6D6" Offset="0.5" />
+                                    <GradientStop Color="#FFE3E3E3" Offset="0.467" />
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+                        <TextBlock Height="23" Name="lbAntiHIV" Text="ANTI HIV1/HIV2" TextAlignment="Center" Margin="0,0,0,5" Foreground="Blue" />
+                        <TextBlock Height="23" Name="lbHBsAg" Text="HBsAg" TextAlignment="Center" Margin="0,0,0,5" Foreground="Blue" />
+                        <TextBlock Height="23" Name="lbSyphilis" Text="Syphilis" TextAlignment="Center" Margin="0,0,0,5" Foreground="Blue" />
+                        <TextBlock Foreground="Blue" Height="23" Name="lbAntiHCV" Text="Anti-HCV" TextAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Height="140" Name="SPanelResults" Width="111.5" IsEnabled="{Binding Enabled}">
+                        <TextBlock Height="23" Name="textBlock5" Text="Results" TextAlignment="Center" Foreground="Blue" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFD6D6D6" Offset="1" />
+                                    <GradientStop Color="#FFF0F0F0" Offset="0" />
+                                    <GradientStop Color="#FFD6D6D6" Offset="0.5" />
+                                    <GradientStop Color="#FFE3E3E3" Offset="0.467" />
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+                        <ComboBox Height="23" Name="CbAntiHIVResults" Width="111.5" Margin="0,0,0,5" Text="{Binding AntiHIV_results}">
+                            <ComboBoxItem Content="NOT DONE" />
+                            <ComboBoxItem Content="REACTIVE" />
+                            <ComboBoxItem Content="NONREACTIVE" />
+                        </ComboBox>
+                        <ComboBox Height="23" Name="CbHBsAgResults" Width="111.5" Margin="0,0,0,5" Text="{Binding HBsAg_results}">
+                            <ComboBoxItem Content="NOT DONE" />
+                            <ComboBoxItem Content="REACTIVE" />
+                            <ComboBoxItem Content="NONREACTIVE" />
+                        </ComboBox>
+                        <ComboBox Height="23" Name="CbSyphilisResults" Width="111.5" Margin="0,0,0,5" Text="{Binding AntiTP_results}">
+                            <ComboBoxItem Content="NOT DONE" />
+                            <ComboBoxItem Content="REACTIVE" />
+                            <ComboBoxItem Content="NONREACTIVE" />
+                        </ComboBox>
+                        <ComboBox Height="23" Name="cbAntiHCVResults" Text="{Binding AntiHCV_results}" Width="111.5">
+                            <ComboBoxItem Content="NOT DONE" />
+                            <ComboBoxItem Content="REACTIVE" />
+                            <ComboBoxItem Content="NONREACTIVE" />
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Height="140" Name="stackPanel7" Width="153">
+                        <TextBlock Height="23" Name="textBlock6" Text="Test Kit" TextAlignment="Center" Foreground="Blue" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFD6D6D6" Offset="1" />
+                                    <GradientStop Color="#FFF0F0F0" Offset="0" />
+                                    <GradientStop Color="#FFD6D6D6" Offset="0.5" />
+                                    <GradientStop Color="#FFE3E3E3" Offset="0.467" />
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+                        <TextBlock Height="23" Name="TbAntiHIVKit" Margin="0,0,0,5" Foreground="Blue" TextAlignment="Center" Text="{Binding AntiHIV_Kit}" />
+                        <TextBlock Height="23" Name="TbHBsAgKit" Margin="0,0,0,5" Foreground="Blue" TextAlignment="Center" Text="{Binding HBsAg_Kit}" />
+                        <TextBlock Height="23" Name="TbSyphilisKit" Margin="0,0,0,5" Foreground="Blue" TextAlignment="Center" Text="{Binding AntiTP_Kit}" />
+                        <TextBlock Foreground="Blue" Height="23" Name="TbAntiHCVKit" Text="{Binding AntiHCV_Kit}" TextAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Height="140" Name="stackPanel8" Width="111.5">
+                        <TextBlock Height="23" Name="textBlock7" Text="Lot No" TextAlignment="Center" Foreground="Blue" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFD6D6D6" Offset="1" />
+                                    <GradientStop Color="#FFF0F0F0" Offset="0" />
+                                    <GradientStop Color="#FFD6D6D6" Offset="0.5" />
+                                    <GradientStop Color="#FFE3E3E3" Offset="0.467" />
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+                        <TextBlock Height="23" Name="TbAntiHIVLotNo" Margin="0,0,0,5" Foreground="Blue" TextAlignment="Center" Text="{Binding AntiHIV_LotNo}" />
+                        <TextBlock Height="23" Name="TbHBsAgLotNo" Margin="0,0,0,5" Foreground="Blue" TextAlignment="Center" Text="{Binding HBsAg_LotNo}" />
+                        <TextBlock Height="23" Name="TbSyphilisLotNo" Margin="0,0,0,5" Foreground="Blue" TextAlignment="Center" Text="{Binding AntiTP_LotNo}" />
+                        <TextBlock Foreground="Blue" Height="23" Name="TbAntiHCVLotNo" Text="{Binding AntiHCV_LotNo}" TextAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Height="140" Name="stackPanel9" Width="70">
+                        <TextBlock Height="23" Name="textBlock8" Text="Expiry" TextAlignment="Center" Foreground="Blue" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFD6D6D6" Offset="1" />
+                                    <GradientStop Color="#FFF0F0F0" Offset="0" />
+                                    <GradientStop Color="#FFD6D6D6" Offset="0.5" />
+                                    <GradientStop Color="#FFE3E3E3" Offset="0.467" />
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+                        <TextBlock Height="23" Name="TbAntiHIVExp" Margin="0,0,0,5" Foreground="Blue" TextAlignment="Center" Text="{Binding AntiHIV_Exp}"/>
+                        <TextBlock Height="23" Name="TbHBsAgExp" Margin="0,0,0,5" Foreground="Blue" TextAlignment="Center" Text="{Binding HBsAg_Exp}" />
+                        <TextBlock Height="23" Name="TbSyphilisExp" Margin="0,0,0,5" Foreground="Blue" TextAlignment="Center" Text="{Binding AntiTP_Exp}" />
+                        <TextBlock Foreground="Blue" Height="23" Name="tbSyphilisExp" Text="{Binding AntiHCV_Exp}" TextAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Height="140" Name="SPanelRemarks" Width="111.5" IsEnabled="{Binding Enabled}">
+                        <TextBlock Height="23" Name="textBlock9" Text="Remarks" TextAlignment="Center" Foreground="Blue" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFD6D6D6" Offset="1" />
+                                    <GradientStop Color="#FFF0F0F0" Offset="0" />
+                                    <GradientStop Color="#FFD6D6D6" Offset="0.5" />
+                                    <GradientStop Color="#FFE3E3E3" Offset="0.467" />
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+                        <TextBox Height="23" Name="TbAntiHIVRemarks" Width="111.5" Margin="0,0,0,5" Background="LightYellow" FontWeight="Bold" Foreground="Blue" Text="{Binding AntiHIV_Remarks}" CharacterCasing="Upper" />
+                        <TextBox Height="23" Name="TbHBsAgRemarks" Width="111.5" Margin="0,0,0,5" Background="LightYellow" FontWeight="Bold" Foreground="Blue" Text="{Binding HBsAg_Remarks}" CharacterCasing="Upper" />
+                        <TextBox Height="23" Name="TbSyphilisRemarks" Width="111.5" Margin="0,0,0,5" Background="LightYellow" FontWeight="Bold" Foreground="Blue" Text="{Binding AntiTP_Remarks}" CharacterCasing="Upper" />
+                        <TextBox Background="LightYellow" CharacterCasing="Upper" FontWeight="Bold" Foreground="Blue" Height="23" Name="tbAntiHCVRemarks" Text="{Binding AntiHCV_Remarks}" Width="111.5" />
+                    </StackPanel>
+                </StackPanel>
+                <GroupBox BorderBrush="Green" FontFamily="Segoe UI" Foreground="Blue" Header="SIGNATORIES" Height="168" Name="GBoxSignatories" Width="299" HorizontalAlignment="Left" Margin="0,0,0,5" FontWeight="Bold" IsEnabled="{Binding Enabled}">
+                    <StackPanel Height="138" Name="stackPanel2" Width="279">
+                        <TextBlock Height="23" Name="textBlock1" Padding="5" Text="Pathologist" FontWeight="Normal" />
+                        <TextBlock FontWeight="Bold" Height="23" Name="TbPathologist" Padding="5" Text="{Binding Pathologist}" />
+                        <TextBlock Height="23" Name="textBlock2" Padding="5" Text="Medical Technologist 1" FontWeight="Normal" />
+                        <TextBlock FontWeight="Bold" Height="23" Name="TbMedTech_1" Padding="5" Text="{Binding MedTech_1}" />
+                        <TextBlock Height="23" Name="textBlock3" Padding="5" Text="Medical Technologist 2" FontWeight="Normal" />
+                        <ComboBox Height="23" Name="CbMedTech_2" Width="279" Text="{Binding MedTech_2}"/>
+                    </StackPanel>
+                </GroupBox>
+                <StackPanel Height="23" Name="stackPanel5" Orientation="Horizontal" Width="205" HorizontalAlignment="Right">
+                    <Button Content="SAVE RECORD" FontFamily="Arial" FontWeight="Bold" Height="23" Margin="0,0,5,0" Name="BtSaveRecord" Width="100">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="LimeGreen" Offset="0.801" />
+                                <GradientStop Color="#FF61E561" Offset="0" />
+                                <GradientStop Color="LimeGreen" Offset="0.5" />
+                                <GradientStop Color="#FF67E665" Offset="0.45" />
+                                <GradientStop Color="#FF64E663" Offset="1" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="PREVIEW" FontFamily="Arial" FontWeight="Bold" Height="23" Name="BtPreview" Width="100">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="LimeGreen" Offset="0.801" />
+                                <GradientStop Color="#FF61E561" Offset="0" />
+                                <GradientStop Color="LimeGreen" Offset="0.5" />
+                                <GradientStop Color="#FF67E665" Offset="0.45" />
+                                <GradientStop Color="#FF64E663" Offset="1" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</UserControl>

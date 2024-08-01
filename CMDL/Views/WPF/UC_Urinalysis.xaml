@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="CMDL.UC_Urinalysis"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Background="#fff"
+             d:DesignHeight="300" d:DesignWidth="300" Width="649" Height="680">
+    <Grid Margin="5">
+        <StackPanel Height="433" Margin="348,12,12,0" Name="stackPanel1" Orientation="Horizontal" Width="279" VerticalAlignment="Top">
+            <StackPanel Height="433" Name="stackPanel3" Width="110" VerticalAlignment="Top">
+                <Label Content="Uric Acid" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label43" Padding="0" Width="110" />
+                <Label Content="Fine Granular Cast" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label44" Padding="0" Width="110" />
+                <Label Content="Coarse Granular Cast" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label45" Padding="0" Width="110" />
+                <Label Content="WBC Cast" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label46" Padding="0" Width="110" />
+                <Label Content="RBC Cast" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label47" Padding="0" Width="110" />
+                <Label Content="Blood" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label48" Padding="0" Width="110" />
+                <Label Content="Leukocytes" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label49" Padding="0" Width="110" />
+                <Label Content="Nitrite" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label50" Padding="0" Width="110" />
+                <Label Content="Ketone" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label51" Padding="0" Width="110" />
+                <Label Content="Urobilinogen" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label52" Padding="0" Width="110" />
+                <Label Content="Ascorbic Acid" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label53" Padding="0" Width="110" />
+                <Label Content="Others" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label54" Padding="0" Width="110" />
+                <Label Content="Note" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label55" Padding="0" Width="110" />
+                <Label Content="Remarks" FontWeight="Normal" Foreground="Blue" Height="69" Margin="0,0,0,5" Name="label56" Padding="0" Width="110" />
+            </StackPanel>
+            <StackPanel Height="433" IsEnabled="{Binding ControlsEnabled}" Name="SpanelResult_2" Width="169" VerticalAlignment="Top">
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbUricAcid" Text="{Binding Uric_Acid}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbFineGranularCast" Text="{Binding Fine_Granular_Cast}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbCoarseGranularCast" Text="{Binding Coarse_Granular_Cast}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbWBCCast" Text="{Binding WBC_Cast}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbRBCCast" Text="{Binding RBC_Cast}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbBlood" Text="{Binding Blood}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbLeukocytes" Text="{Binding Leukocytes}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbNitrite" Text="{Binding Nitrite}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbKetone" Text="{Binding Ketone}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbUrobilinogen" Text="{Binding Urobilinogen}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbAscorbicAcid" Text="{Binding Ascorbic_Acid}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbOthers" Text="{Binding Others}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" Margin="0,0,0,5" Name="TbNote" Text="{Binding Note}" Width="169" FontWeight="Bold" />
+                <TextBox Background="LightYellow" CharacterCasing="Upper" Foreground="Blue" Height="69" HorizontalAlignment="Left" Margin="0,0,0,5" Name="TbRemarks" Text="{Binding Remarks}" TextAlignment="Justify" Width="169" FontWeight="Bold" TextWrapping="WrapWithOverflow" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Height="433" Margin="12,12,348,0" Name="stackPanel2" Orientation="Horizontal" Width="279" VerticalAlignment="Top">
+            <StackPanel Height="433" Name="stackPanel4" Width="110" VerticalAlignment="Top">
+                <Label Content="Collection" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label30" Padding="0" Width="110" />
+                <Label Content="Color" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label1" Padding="0" Width="110" />
+                <Label Content="Transparency" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label2" Padding="0" Width="110" />
+                <Label Content="Specific Gravity" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label3" Padding="0" Width="110" />
+                <Label Content="PH" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label4" Padding="0" Width="110" />
+                <Label Content="Glucose" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label5" Padding="0" Width="110" />
+                <Label Content="Protein" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label6" Padding="0" Width="110" />
+                <Label Content="RBC" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label7" Padding="0" Width="110" />
+                <Label Content="WBC" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label8" Padding="0" Width="110" />
+                <Label Content="Epithelial Cells" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label9" Padding="0" Width="110" />
+                <Label Content="Bacteria" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label10" Padding="0" Width="110" />
+                <Label Content="Mucus Thread" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label11" Padding="0" Width="110" />
+                <Label Content="A. Urates/PO4" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label12" Padding="0" Width="110" />
+                <Label Content="Calcium Oxalate" FontWeight="Normal" Foreground="Blue" Height="23" Margin="0,0,0,5" Name="label13" Padding="0" Width="110" />
+            </StackPanel>
+            <StackPanel Height="433" IsEnabled="{Binding ControlsEnabled}" Name="SpanelResult_1" Width="169" VerticalAlignment="Top">
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="0,0,0,5" Name="CbUrineCollection" Width="169" Text="{Binding Collection}"></ComboBox>
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CBColor" Text="{Binding Color}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbTransparency" Text="{Binding Transparency}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CBSpecificGravity" Text="{Binding Specific_Gravity}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbPH" Text="{Binding PH}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbGlucose" Text="{Binding Glucose}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbProtein" Text="{Binding Protein}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbRBC" Text="{Binding RBC}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CbWBC" Text="{Binding WBC}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CBEpithelialCells" Text="{Binding Epithelial_Cells}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CBBacteria" Text="{Binding Bacteria}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CBMucusThread" Text="{Binding Mucus_Thread}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CBAUrates" Text="{Binding A_Urates}" Width="169" FontWeight="Bold" />
+                <ComboBox Background="LightYellow" Foreground="Blue" Height="23" HorizontalAlignment="Left" IsEditable="True" Margin="0,0,0,5" Name="CBCalciumOX" Text="{Binding Calcium_Oxalate}" Width="169" FontWeight="Bold" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Height="23" HorizontalAlignment="Right" Margin="0,623,0,0" Name="stackPanel7" Orientation="Horizontal" Width="205" VerticalAlignment="Top">
+            <Button Content="SAVE RECORD" FontFamily="Arial" FontWeight="Bold" Height="23" Margin="0,0,5,0" Name="BtSaveRecord" Width="100">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="LimeGreen" Offset="0.801" />
+                        <GradientStop Color="#FF61E561" Offset="0" />
+                        <GradientStop Color="LimeGreen" Offset="0.5" />
+                        <GradientStop Color="#FF67E665" Offset="0.45" />
+                        <GradientStop Color="#FF64E663" Offset="1" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="PREVIEW" FontFamily="Arial" FontWeight="Bold" Height="23" Name="BtPreview" Width="100">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="LimeGreen" Offset="0.801" />
+                        <GradientStop Color="#FF61E561" Offset="0" />
+                        <GradientStop Color="LimeGreen" Offset="0.5" />
+                        <GradientStop Color="#FF67E665" Offset="0.45" />
+                        <GradientStop Color="#FF64E663" Offset="1" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        <GroupBox BorderBrush="Green" FontFamily="Segoe UI" FontWeight="Bold" Foreground="Blue" Header="SIGNATORIES" Height="132" IsEnabled="{Binding Enabled}" Margin="12,461,328,0" Name="GBoxSignatories" Width="299" VerticalAlignment="Top">
+            <StackPanel Height="92" Name="stackPanel8" Width="279">
+                <TextBlock FontWeight="Normal" Height="23" Name="textBlock1" Padding="5" Text="Pathologist" />
+                <TextBlock FontWeight="Bold" Height="23" Name="TbPathologist" Padding="5" Text="{Binding Pathologist}" />
+                <TextBlock FontWeight="Normal" Height="23" Name="textBlock2" Padding="5" Text="Medical Technologist" />
+                <TextBlock FontWeight="Bold" Height="23" Name="TbMedTech" Padding="5" Text="{Binding MedTech}" />
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>
